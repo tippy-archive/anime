@@ -1,49 +1,48 @@
-var delay = 5000
+var delay = 6000
+var stopAfter = 60 * 1000;
+
 var curindex = 0
+var currentActiveImageId = 'image1';
 
 var randomimages = new Array()
 
-randomimages[0] = "https://lh3.google.com/u/0/d/1K-1_k-YPvI0Y09JcTvsYkrGP9fsT7h9t"
-randomimages[1] = "https://lh3.google.com/u/0/d/1w-uD1cyzFU-5G_UipBhw18Wy7Y-awHiJ"
-randomimages[2] = "https://lh3.google.com/u/0/d/1mpmrp0XyPAYMfSQ4y7wKjHqwzw5768Yh"
 
-var preload = new Array()
 
-for (n = 0; n < randomimages.length; n++) {
-    preload[n] = new Image()
-    preload[n].src = randomimages[n]
-}
-
-document.write('<img name="defaultimage" src="' + randomimages[Math.floor(Math.random() * (randomimages.length))] + '"  class="random-img">')
+var initialImageIndex = Math.floor(Math.random() * randomimages.length);
+document.getElementById('image1').src = randomimages[initialImageIndex];
+document.getElementById('image1').classList.add('active');
+curindex = initialImageIndex;
 
 function rotateimage() {
+  var oldImageElement = document.getElementById(currentActiveImageId);
+  var newImageId = (currentActiveImageId === 'image1') ? 'image2' : 'image1';
+  var newImageElement = document.getElementById(newImageId);
+
   var tempindex = Math.floor(Math.random() * randomimages.length);
 
   if (curindex === tempindex) {
-    curindex = curindex === 0 ? 1 : curindex - 1;
+    curindex = (curindex + 1) % randomimages.length;
   } else {
     curindex = tempindex;
   }
 
-  var img = new Image();
-  img.src = randomimages[curindex];
+  newImageElement.src = randomimages[curindex];
 
-  img.onload = function() {
-    document.images.defaultimage.src = randomimages[curindex];
+  newImageElement.onload = function() {
+    oldImageElement.classList.remove('active');
+    newImageElement.classList.add('active');
+
+    currentActiveImageId = newImageId;
   };
-
-  img.onerror = function() {
-    console.error(`Failed to load image: ${randomimages[curindex]}`);
-
-    // 대체 이미지 배열
-    var placeholderImages = [
-"https://i.postimg.cc/X7DF1JMp/01.jpg",
-"https://i.postimg.cc/g2XhCWd4/02.jpg",
-"https://i.postimg.cc/qM7yGK5P/thumb.jpg"
-];
-    var randomIndex = Math.floor(Math.random() * placeholderImages.length);
-    document.images.defaultimage.src = placeholderImages[randomIndex];
+  
+  newImageElement.onerror = function() {
+    console.error("Failed to load image: " + randomimages[curindex]);
   };
 }
 
-setInterval("rotateimage()", delay);
+var rotationInterval = setInterval(rotateimage, delay);
+
+setTimeout(function() {
+  clearInterval(rotationInterval);
+  console.log("Image rotation stopped after " + stopAfter / 1000 + " seconds.");
+}, stopAfter);
