@@ -11,48 +11,10 @@
     <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczMH_k6dw8yhmJBkVHU0WSs9D0lxriaF3DqVZ4wi1cQt1Djln6xF9eH-OlkEjuvZuLusAPWeQT1-R_xkp7CQrpo3u4Tj6AKsZe2rk0t3LvQLsfoete7Oo9rwac3xQEM5aKT9bneHZsXNnqTstGV8wrF9" />
     <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczMbpSX92DIho7-vZydv18Kj0pUeJiPlHMEiF9V6ufXZ7j-MpbH7d_YmXn_WfpT3DNR3uHVlfOYvpzaxifVa7EY0Eq1mJn8Rq8_sueAC7E58jZpTLiaju3BG_--TRK-bE9bRDF_OXBH5JSwC0rDuh6XK" />
     <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczMbpSX92DIho7-vZydv18Kj0pUeJiPlHMEiF9V6ufXZ7j-MpbH7d_YmXn_WfpT3DNR3uHVlfOYvpzaxifVa7EY0Eq1mJn8Rq8_sueAC7E58jZpTLiaju3BG_--TRK-bE9bRDF_OXBH5JSwC0rDuh6XK" />
-    <style>
-        /* 표 스타일: 경계선 제거 및 전체 가운데 정렬 */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            max-width: 700px;
-            margin: 20px auto; /* 표 자체를 화면 가운데로 배치 */
-            font-family: sans-serif;
-        }
-
-        th, td {
-            border: none;
-            padding: 2px 15px;
-            text-align: center; /* 모든 글씨 가운데 정렬 */
-        }
-
-        th {
-            background-color: #f8f9fa;
-            color: #333;
-            font-weight: bold;
-        }
-
-        /* 공개키 스타일: 밑줄 없음, 클릭 가능 */
-        .public-key {
-            color: #007bff;
-            cursor: pointer;
-            text-decoration: none;
-            word-break: break-all; /* 긴 주소 대응 */
-            transition: background-color 0.2s;
-            border-radius: 4px;
-            display: inline-block; /* 배경색 범위를 글자 크기에 맞춤 */
-            padding: 5px 10px;
-        }
-
-        .public-key:hover {
-            background-color: #e9ecef;
-            color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="open-key.css" />
 </head>
-<body>
 
+<body>
     <table>
         <thead>
             <tr>
@@ -63,50 +25,7 @@
         <tbody id="table-body">
             </tbody>
     </table>
-
-    <script>
-        // 1. CSV 파일을 읽어오는 함수
-        async function loadCSV() {
-            try {
-                const response = await fetch('data.csv'); // CSV 파일 경로
-                const data = await response.text();
-                
-                // 줄바꿈으로 나누고, 첫 번째 줄(헤더)은 제외
-                const rows = data.split('\n').slice(1);
-                const tableBody = document.getElementById('table-body');
-
-                rows.forEach(row => {
-                    const columns = row.split(',');
-                    if (columns.length < 2) return; // 빈 줄 방지
-
-                    const name = columns[0].trim();
-                    const key = columns[1].trim();
-
-                    // 2. HTML 행(tr) 생성
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td>${name}</td>
-                        <td>
-                            <span class="public-key" onclick="copyText('${key}')">${key}</span>
-                        </td>
-                    `;
-                    tableBody.appendChild(tr);
-                });
-            } catch (error) {
-                console.error('CSV를 불러오는데 실패했습니다:', error);
-            }
-        }
-
-        // 3. 복사 기능 함수
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert("복사되었습니다: " + text);
-            });
-        }
-
-        // 페이지 로드 시 CSV 실행
-        loadCSV();
-    </script>
-
+    <script src="open-key.js"></script>
 </body>
+
 </html>
