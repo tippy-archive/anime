@@ -1,49 +1,35 @@
-const spans = document.querySelectorAll('span');
 const VideoMain = document.getElementById('video-main');
 const MainVideoTitle = document.getElementById('main-video-title');
 const MainVideoSubtitle = document.getElementById('main-video-subtitle');
+const PlaylistContainer = document.querySelector('.main-playlist');
 let currentIframe;
 
-spans.forEach(span => {
-    span.addEventListener('click', () => {
-        const iframeUrl = span.dataset.iframeUrl;
-        const title = span.dataset.title;
-        const subtitle = span.dataset.subtitle;
+PlaylistContainer.addEventListener('click', (event) => {
+    const span = event.target.closest('span');
 
-        // 기존 iframe 제거
-        if (currentIframe) {
-            VideoMain.removeChild(currentIframe);
-        }
+    if (!span || !span.dataset.iframeUrl) return;
 
-        if (iframeUrl) {
-            // Create a new iframe element
-            const newIframe = document.createElement('iframe');
+    const iframeUrl = span.dataset.iframeUrl;
+    const title = span.dataset.title;
+    const subtitle = span.dataset.subtitle;
 
-            // Set the src attribute to the iframe URL
-            newIframe.src = iframeUrl;
+    if (currentIframe) {
+        VideoMain.removeChild(currentIframe);
+        currentIframe = null;
+    }
 
-            newIframe.id = 'google-iframe';
+    if (iframeUrl) {
+        const newIframe = document.createElement('iframe');
+        newIframe.src = iframeUrl;
+        newIframe.id = 'google-iframe';
+        newIframe.allowFullscreen = true;
+        newIframe.setAttribute('allow', 'fullscreen');
 
-            // Allow fullscreen for the iframe
-            newIframe.allowFullscreen = true;
-            newIframe.webkitallowfullscreen = true;
-            newIframe.mozallowfullscreen = true;
+        VideoMain.classList.add('video-main');
+        VideoMain.appendChild(newIframe);
+        currentIframe = newIframe;
+    }
 
-            // Append the new iframe to the VideoMain element
-            VideoMain.classList.add('video-main');
-            VideoMain.appendChild(newIframe);
-
-            // Set the currentIframe variable to the new iframe
-            currentIframe = newIframe;
-        }
-
-        // 결과 div에 텍스트 출력
-        if (title) {
-            MainVideoTitle.textContent = title;
-        }
-
-        if (subtitle) {
-            MainVideoSubtitle.textContent = subtitle;
-        }
-    });
+    MainVideoTitle.textContent = title || "";
+    MainVideoSubtitle.textContent = subtitle || "";
 });

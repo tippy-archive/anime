@@ -99,7 +99,6 @@
     .main-playlist {
         width: 560px;
         height: calc((100vw - 604px) * 0.5625);
-        min-height: 0px;
         max-height: 1080px;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
@@ -127,7 +126,7 @@
         padding: 0 0 0 8px;
     }
 
-    #gttopbtn {
+    #gototop {
         display: none;
     }
 

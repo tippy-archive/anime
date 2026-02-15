@@ -12,11 +12,6 @@
         border-radius: 10px;
     }
 
-    .header {
-        background-size: 100vw auto;
-        background-position: 50% 0;
-    }
-
     .header-title {
         font-size: 30px;
         padding: calc((56.25vw - 38px) / 2) 0;
@@ -97,8 +92,8 @@
         padding: 12px 0px;
     }
 
-    #gttopbtn {
-        padding: 15px 30px;
+    #gototop {
+        padding: 16px 30px;
         bottom: 30px;
         right: 30px;
         font-size: 18px;
@@ -115,7 +110,7 @@
 
     .navbar {
         height: 49px;
-        padding: 0 50px;
+        padding: 0 80px;
     }
 
     .navbar-title {

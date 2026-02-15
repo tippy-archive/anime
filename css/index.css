@@ -59,7 +59,7 @@ img {
     opacity: 1;
   }
 
-#gttopbtn {
+#gototop {
     display: none;
     position: fixed;
     font-weight: bold;
@@ -71,7 +71,7 @@ img {
     border-radius: 8px;
 }
 
-#gttopbtn:hover {
+#gototop:hover {
     color: #000000;
     background-color: #E7D3FB;
 }

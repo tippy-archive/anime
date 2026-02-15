@@ -5,7 +5,6 @@
     }
 
     .header {
-        background-size: 100vw auto;
         background-position: 50% 0;
     }
 
@@ -90,11 +89,11 @@
         font-size: 12px;
     }
 
-    #gttopbtn {
-        padding: 8px 16px;
-        bottom: 15px;
-        right: 15px;
-        font-size: 10px;
+    #gototop {
+        padding: 12px 20px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 12px;
     }
 
 }

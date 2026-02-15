@@ -81,6 +81,7 @@
     .main-playlist {
         width: calc(100vw - 20px);
         height: calc(100vh - (((100vw - 20px) * 0.5625) + 159px));
+        min-height: calc((100vw - 20px) * 0.5625);
         margin: 0;
         grid-column: 1 / 2;
         grid-row: 4 / 5;
@@ -110,7 +111,7 @@
         padding: 0 0 0 8px;
     }
 
-    #gttopbtn {
+    #gototop {
         padding: 15px 30px;
         bottom: 30px;
         right: 30px;
@@ -197,8 +198,8 @@
     .main-playlist {
         width: calc(100vw - 30px);
         max-width: 1120px;
-        min-height: calc(100vh - (630px + 159px));
         height: auto;
+        min-height: 0;
     }
 
     .main-playlist::-webkit-scrollbar {

@@ -1,5 +1,6 @@
 .header {
-    background-attachment: fixed;
+    background-size: cover;
+    background-attachment: scroll;
     background-repeat: no-repeat;
 }
 
@@ -10,11 +11,12 @@
 }
 
 .navbar {
-    top: -1px;
+    top: 0;
     overflow: hidden;
     position: sticky;
     background-color: #D3ABFB;
     background-image: linear-gradient(62deg, #D3ABFB 20%, #75B8FB 100%);
+    z-index: 1;
 }
 
 .navbar-title {
@@ -95,4 +97,8 @@ footer {
     color: #FFFFFF;
     background-color: #D3ABFB;
     background-image: linear-gradient(62deg, #D3ABFB 20%, #75B8FB 100%);
+}
+
+footer h5 {
+    margin: 10px 0 0 0;
 }
