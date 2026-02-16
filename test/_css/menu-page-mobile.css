@@ -1,0 +1,125 @@
+@media (min-width: 0px) {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .header {
+        background-position: 50% 0;
+    }
+
+    .header-title {
+        font-size: 20px;
+        padding: calc((56.25vw - 25px) / 2) 0;
+    }
+
+    .navbar {
+        height: 31px;
+        padding: 0 20px;
+    }
+
+    .navbar-title {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    .navbar a.navbar-title:hover {
+        text-shadow: 0 0 10px black;
+    }
+
+    .google-login img {
+        height: 27px;
+        padding: 2px 0;
+    }
+
+    .row-side {
+        display: none;
+    }
+
+    .row-side a {
+        display: none;
+    }
+
+    .row-side ul {
+        display: none;
+    }
+
+    .row-side ul:hover {
+        display: none;
+    }
+
+    .side-thumb-img {
+        display: none;
+    }
+
+    .row-main {
+        width: 98vw;
+        padding: 0 1vw 1vw 1vw;
+    }
+
+    .main-middle {
+        font-size: 12px;
+        padding: 6px;
+        margin: 1vw 0;
+    }
+
+    .main-list {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 500px;
+    }
+
+    .list-select {
+        width: calc(98vw / 3);
+    }
+
+    .list-img img {
+        width: calc((98vw - 12px) / 3);
+        height: calc(((98vw - 12px) / 3) * 1.5);
+        padding: 2px 2px 0 2px;
+    }
+
+    .list-title {
+        height: 50px;
+        padding: 0 2px 2px 2px;
+        font-size: 10px;
+    }
+
+    footer {
+        padding: 6px 0px;
+        font-size: 12px;
+    }
+
+    #gototop {
+        padding: 12px 20px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 12px;
+    }
+
+    .search-container {
+        padding: 20px;
+    }
+
+    .search-input-wrapper {
+        padding: 4px 10px;
+    }
+
+    #searchInput {
+        font-size: 12px;
+    }
+
+    #search-results {
+        min-height: calc(100vh - ((100vw * 0.5625) + 1vw + 168px));
+    }
+
+    .search-item-animated {
+        max-height: calc((((98vw - 12px) / 3) * 1.5) + 54px);
+    }
+
+    .no-result {
+        padding: 50px 0 0 0;
+    }
+
+    .autocomplete-item {
+        font-size: 10px;
+    }
+}
