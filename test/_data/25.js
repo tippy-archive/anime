@@ -10,14 +10,18 @@ window.globalData = window.globalData || [];
 
         window.globalData.push(...data);
 
-        parentContainer.innerHTML = data.map(item => `
-            <a href="${item.u}">
-                <ul class="list-select playlist-main">
-                    <li class="list-img"><img src="${item.i}"/></li>
-                    <li class="list-title"><p>${item.t}</p></li>
-                </ul>
-            </a>
-        `).join('');
+parentContainer.innerHTML = data
+    // 1. data:image/svg+xml가 '포함되지 않은(!)' 데이터만 걸러냅니다.
+    .filter(item => !item.i.includes('data:image/svg+xml')) 
+    // 2. 걸러진 데이터로만 HTML을 생성합니다.
+    .map(item => `
+        <a href="${item.u}">
+            <ul class="list-select playlist-main">
+                <li class="list-img"><img src="${item.i}" loading="lazy"/></li>
+                <li class="list-title"><p>${item.t}</p></li>
+            </ul>
+        </a>
+    `).join('');
 
     } catch (error) {
         console.error("데이터 로드 실패:", error);
