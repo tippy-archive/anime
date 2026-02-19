@@ -10,14 +10,16 @@ window.globalData = window.globalData || [];
 
         window.globalData.push(...data);
 
-        parentContainer.innerHTML = data.map(item => `
-            <a href="${item.u}">
-                <ul class="list-select playlist-main">
-                    <li class="list-img"><img src="${item.i}"/></li>
-                    <li class="list-title"><p>${item.t}</p></li>
-                </ul>
-            </a>
-        `).join('');
+        parentContainer.innerHTML = data
+            .filter(item => !item.i.includes('data:image/svg+xml'))
+            .map(item => `
+        <a href="${item.u}">
+            <ul class="list-select playlist-main">
+                <li class="list-img"><img src="${item.i}" loading="lazy"/></li>
+                <li class="list-title"><p>${item.t}</p></li>
+            </ul>
+        </a>
+    `).join('');
 
     } catch (error) {
         console.error("데이터 로드 실패:", error);
