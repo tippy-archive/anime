@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="_css/menu-page-mobile.css" />
         <link rel="stylesheet" type="text/css" href="_css/menu-page-tablet.css" />
         <link rel="stylesheet" type="text/css" href="_css/menu-page-desktop.css" />
-        <script src="_js/data-loader.js"></script>
+
     </head>
     <body>
         <div class="header" data-speed="0.4">
@@ -41,7 +41,6 @@
                 </div>
                 <a href="https://forms.gle/CPCySo7ZKwyi8uj48" target="_blank" rel="noopener noreferrer"><ul>영상 오류 신고</ul></a>
                 <a href="https://tippy-archive.github.io/inori/index.html"><ul>미나세 이노리 아카이브</ul></a>
-                <a href="#2026"><ul>2026년</ul></a>
                 <a href="#2025"><ul>2025년</ul></a>
                 <a href="#2024"><ul>2024년</ul></a>
                 <a href="#2023"><ul>2023년</ul></a>
@@ -86,62 +85,58 @@
                     </div>
                 </div>
                 <div id="main-content">
-                    <div class="section-item">
-                        <div class="main-middle"><p id="2026">2026년</p></div>
-                        <div class="main-list"><script src="_data/26.js" defer></script></div>
-                        <div class="main-middle"><p id="2025">2025년</p></div>
-                        <div class="main-list"><script src="_data/25.js" defer></script></div>
-                        <div class="main-middle"><p id="2024">2024년</p></div>
-                        <div class="main-list"><script src="_data/24.js" defer></script></div>
-                        <div class="main-middle"><p id="2023">2023년</p></div>
-                        <div class="main-list"><script src="_data/23.js" defer></script></div>
-                        <div class="main-middle"><p id="2022">2022년</p></div>
-                        <div class="main-list"><script src="_data/22.js" defer></script></div>
-                        <div class="main-middle"><p id="2021">2021년</p></div>
-                        <div class="main-list"><script src="_data/21.js" defer></script></div>
-                        <div class="main-middle"><p id="2020">2020년</p></div>
-                        <div class="main-list"><script src="_data/20.js" defer></script></div>
-                        <div class="main-middle"><p id="2019">2019년</p></div>
-                        <div class="main-list"><script src="_data/19.js" defer></script></div>
-                        <div class="main-middle"><p id="2018">2018년</p></div>
-                        <div class="main-list"><script src="_data/18.js" defer></script></div>
-                        <div class="main-middle"><p id="2017">2017년</p></div>
-                        <div class="main-list"><script src="_data/17.js" defer></script></div>
-                        <div class="main-middle"><p id="2016">2016년</p></div>
-                        <div class="main-list"><script src="_data/16.js" defer></script></div>
-                        <div class="main-middle"><p id="2015">2015년</p></div>
-                        <div class="main-list"><script src="_data/15.js" defer></script></div>
-                        <div class="main-middle"><p id="2014">2014년</p></div>
-                        <div class="main-list"><script src="_data/14.js" defer></script></div>
-                        <div class="main-middle"><p id="2013">2013년</p></div>
-                        <div class="main-list"><script src="_data/13.js" defer></script></div>
-                        <div class="main-middle"><p id="2012">2012년</p></div>
-                        <div class="main-list"><script src="_data/12.js" defer></script></div>
-                        <div class="main-middle"><p id="2011">2011년</p></div>
-                        <div class="main-list"><script src="_data/11.js" defer></script></div>
-                        <div class="main-middle"><p id="2010">2010년</p></div>
-                        <div class="main-list"><script src="_data/10.js" defer></script></div>
-                        <div class="main-middle"><p id="2009">2009년</p></div>
-                        <div class="main-list"><script src="_data/09.js" defer></script></div>
-                        <div class="main-middle"><p id="2008">2008년</p></div>
-                        <div class="main-list"><script src="_data/08.js" defer></script></div>
-                        <div class="main-middle"><p id="2007">2007년</p></div>
-                        <div class="main-list"><script src="_data/07.js" defer></script></div>
-                        <div class="main-middle"><p id="2006">2006년</p></div>
-                        <div class="main-list"><script src="_data/06.js" defer></script></div>
-                        <div class="main-middle"><p id="2005">2005년</p></div>
-                        <div class="main-list"><script src="_data/05.js" defer></script></div>
-                        <div class="main-middle"><p id="2004">2004년</p></div>
-                        <div class="main-list"><script src="_data/04.js" defer></script></div>
-                        <div class="main-middle"><p id="2003">2003년</p></div>
-                        <div class="main-list"><script src="_data/03.js" defer></script></div>
-                        <div class="main-middle"><p id="2002">2002년</p></div>
-                        <div class="main-list"><script src="_data/02.js" defer></script></div>
-                        <div class="main-middle"><p id="2001">2001년</p></div>
-                        <div class="main-list"><script src="_data/01.js" defer></script></div>
-                        <div class="main-middle"><p id="2000">2000년</p></div>
-                        <div class="main-list"><script src="_data/00.js" defer></script></div>
-                    </div>
+                    <div class="main-middle"><p id="2025">2025년</p></div>
+                    <div class="main-list" data-json="_data/25.json"></div>
+                    <div class="main-middle"><p id="2024">2024년</p></div>
+                    <div class="main-list" data-json="_data/24.json"></div>
+                    <div class="main-middle"><p id="2023">2023년</p></div>
+                    <div class="main-list" data-json="_data/23.json"></div>
+                    <div class="main-middle"><p id="2022">2022년</p></div>
+                    <div class="main-list" data-json="_data/22.json"></div>
+                    <div class="main-middle"><p id="2021">2021년</p></div>
+                    <div class="main-list" data-json="_data/21.json"></div>
+                    <div class="main-middle"><p id="2020">2020년</p></div>
+                    <div class="main-list" data-json="_data/20.json"></div>
+                    <div class="main-middle"><p id="2019">2019년</p></div>
+                    <div class="main-list" data-json="_data/19.json"></div>
+                    <div class="main-middle"><p id="2018">2018년</p></div>
+                    <div class="main-list" data-json="_data/18.json"></div>
+                    <div class="main-middle"><p id="2017">2017년</p></div>
+                    <div class="main-list" data-json="_data/17.json"></div>
+                    <div class="main-middle"><p id="2016">2016년</p></div>
+                    <div class="main-list" data-json="_data/16.json"></div>
+                    <div class="main-middle"><p id="2015">2015년</p></div>
+                    <div class="main-list" data-json="_data/15.json"></div>
+                    <div class="main-middle"><p id="2014">2014년</p></div>
+                    <div class="main-list" data-json="_data/14.json"></div>
+                    <div class="main-middle"><p id="2013">2013년</p></div>
+                    <div class="main-list" data-json="_data/13.json"></div>
+                    <div class="main-middle"><p id="2012">2012년</p></div>
+                    <div class="main-list" data-json="_data/12.json"></div>
+                    <div class="main-middle"><p id="2011">2011년</p></div>
+                    <div class="main-list" data-json="_data/11.json"></div>
+                    <div class="main-middle"><p id="2010">2010년</p></div>
+                    <div class="main-list" data-json="_data/10.json"></div>
+                    <div class="main-middle"><p id="2009">2009년</p></div>
+                    <div class="main-list" data-json="_data/09.json"></div>
+                    <div class="main-middle"><p id="2008">2008년</p></div>
+                    <div class="main-list" data-json="_data/08.json"></div>
+                    <div class="main-middle"><p id="2007">2007년</p></div>
+                    <div class="main-list" data-json="_data/07.json"></div>
+                    <div class="main-middle"><p id="2006">2006년</p></div>
+                    <div class="main-list" data-json="_data/06.json"></div>
+                    <div class="main-middle"><p id="2005">2005년</p></div>
+                    <div class="main-list" data-json="_data/05.json"></div>
+                    <div class="main-middle"><p id="2004">2004년</p></div>
+                    <div class="main-list" data-json="_data/04.json"></div>
+                    <div class="main-middle"><p id="2003">2003년</p></div>
+                    <div class="main-list" data-json="_data/03.json"></div>
+                    <div class="main-middle"><p id="2002">2002년</p></div>
+                    <div class="main-list" data-json="_data/02.json"></div>
+                    <div class="main-middle"><p id="2001">2001년</p></div>
+                    <div class="main-list" data-json="_data/01.json"></div>
+                    <div class="main-middle"><p id="2000">2000년</p></div>
+                    <div class="main-list" data-json="_data/00.json"></div>
                 </div>
                 <div id="search-results" class="main-list" style="display: none;"></div>
             </div>
@@ -150,6 +145,7 @@
         </footer>
         <button onclick="topFunction()" id="gototop">Top</button>
         <script src="_js/vanilla-parallax.js"></script>
+        <script src="_js/data-loader.js"></script>
         <script src="_js/search.js"></script>
         <script src="_js/gototop.js"></script>
     </body>
