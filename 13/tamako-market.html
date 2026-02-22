@@ -1,139 +1,50 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>타마코 마켓</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="타마코 마켓" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczNz-u9-8nG4wHHC3ZNQijSXSfAWAuiVgOLy8xZkGkUbcQhC96poDeBaQAfvIYXDqJdvAO9gFlrxHm-qXS2VFKwslkXPvi0MIkj5ha20sGBFdZJnDoTkEVXbiVsJjhh-b0OvZjRcZkQ0zrHf-aZkO70h" />
-    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczNga2du6BZJwXN5ONeUYB99fhi1QnJnWWGJm_FfTD43wtlsx0V3KwmYkwZukFzYMTIzFbIRVBSxujW37pdmDsLHWqHiliKMorgpZD_8sZxeKo6XfpXWgcnK8eQy9RKXS3ZCsbETFgUJxF7exIUfPTHX" />
-    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczNga2du6BZJwXN5ONeUYB99fhi1QnJnWWGJm_FfTD43wtlsx0V3KwmYkwZukFzYMTIzFbIRVBSxujW37pdmDsLHWqHiliKMorgpZD_8sZxeKo6XfpXWgcnK8eQy9RKXS3ZCsbETFgUJxF7exIUfPTHX" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" />
-    <link rel="stylesheet" type="text/css" href="../css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-mobile.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-tablet.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-desktop.css" />
-    <link rel="stylesheet" type="text/css" href="" />
-    <script src=""></script>
-</head>
-
-<body>
-    <div class="navbar">
-        <a class="main-title" href="../index.html">Tippy</a>
-        <a class="next">&#10095;</a>
-        <a class="year" href="../index.html#2013">2013년</a>
-        <a class="next">&#10095;</a>
-        <a class="sub-title" href="tamako-market.html">타마코 마켓</a>
-    </div>
-    <ul class="video-page">
-        <ul class="main-video">
-            <div class="image-container">
-                <img id="image1" src="" class="fade-img active">
-                <img id="image2" src="" class="fade-img">
-            </div>
-            <li id="video-main"></li>
+    <head>
+        <title>타마코 마켓</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="타마코 마켓" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczNz-u9-8nG4wHHC3ZNQijSXSfAWAuiVgOLy8xZkGkUbcQhC96poDeBaQAfvIYXDqJdvAO9gFlrxHm-qXS2VFKwslkXPvi0MIkj5ha20sGBFdZJnDoTkEVXbiVsJjhh-b0OvZjRcZkQ0zrHf-aZkO70h" />
+        <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczNga2du6BZJwXN5ONeUYB99fhi1QnJnWWGJm_FfTD43wtlsx0V3KwmYkwZukFzYMTIzFbIRVBSxujW37pdmDsLHWqHiliKMorgpZD_8sZxeKo6XfpXWgcnK8eQy9RKXS3ZCsbETFgUJxF7exIUfPTHX" />
+        <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczNga2du6BZJwXN5ONeUYB99fhi1QnJnWWGJm_FfTD43wtlsx0V3KwmYkwZukFzYMTIzFbIRVBSxujW37pdmDsLHWqHiliKMorgpZD_8sZxeKo6XfpXWgcnK8eQy9RKXS3ZCsbETFgUJxF7exIUfPTHX" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" />
+        <link rel="stylesheet" type="text/css" href="../_css/index.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-mobile.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-tablet.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-desktop.css" />
+    </head>
+    <body>
+        <div class="navbar">
+            <a class="main-title" href="../index.html">Tippy</a>
+            <a class="next">&#10095;</a>
+            <a class="year" href="../index.html#2013">2013년</a>
+            <a class="next">&#10095;</a>
+            <a class="sub-title" href="tamako-market.html">타마코 마켓</a>
+        </div>
+        <ul class="video-page">
+            <ul class="main-video">
+                <div class="image-container">
+                    <img id="image1" src="" class="fade-img active">
+                    <img id="image2" src="" class="fade-img">
+                </div>
+                <li id="video-main"></li>
+            </ul>
+            <div id="main-video-title">타마코 마켓</div>
+            <div id="main-video-subtitle"></div>
+            <ul class="main-playlist">
+                <script src="../_js/video-data.js"></script>
+            </ul>
         </ul>
-        <div id="main-video-title">타마코 마켓</div>
-        <div id="main-video-subtitle"></div>
-        <ul class="main-playlist">
-            <span data-title="타마코 마켓 제1화" data-subtitle="그 애는 귀여운 떡집 딸" data-iframe-url="https://drive.google.com/file/d/14iIjfQHRB7l0pM-Qcug9JT6po9IfhjpI/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczPdUg9U4WabZFxMYFrT9nlx_yAwHpptzwXz7Z7MZxa7W02g1O6dFUX8jvxABjGaAYWmD5-f55KbigTizqE66Feh9htB7t2H0eFgns3DXomZxwOmafIvUdiBfa7AA4ctkfX6FR08Kxw8Sw6Hn33gjzxg" /></li>
-                    <li class="playlist-title">제1화<br>그 애는 귀여운 떡집 딸</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제2화" data-subtitle="사랑의 꽃이 피는 발렌타인" data-iframe-url="https://drive.google.com/file/d/1kPP7pknVNyxBaY5E_UjMkFoyPDuoWgWl/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczMQii5gR500c2j8__TenL_zeELWhODqp2fuSzdkTvfrxejC5zILwzuij8RlpHr_43gNusmT9tiJ5y0uYTm24pE5RnU1ViVIsS9UPbv5bgMGblk3eKaoL2eSQJ11UIw8aIUl71rOpYstN-qaaMsMc7mZ" /></li>
-                    <li class="playlist-title">제2화<br>사랑의 꽃이 피는 발렌타인</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제3화" data-subtitle="쿨한 그 애한테 앗 뜨거" data-iframe-url="https://drive.google.com/file/d/16VChtIGlRQOFC39Z7rWSdrvhp2XuNzqm/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNTMry4S4S0bCAaFbQQuGoIFizh_bjX0Ns0iSWM4B0VPCJHB2MryHOuATvFgBfFSUkMRh23QsNIPPirQuoRt6p-UdDgwrUkAiA46-SMffrfmg0s60KPNej1kWfAvfcq0N6VgnACGJL7aTn1bc6F9ZjG" /></li>
-                    <li class="playlist-title">제3화<br>쿨한 그 애한테 앗 뜨거</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제4화" data-subtitle="작은 사랑이 피었어" data-iframe-url="https://drive.google.com/file/d/13s00OEAumJeaQ-pfdX2CA5_oZ6ov2_15/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczPrdJSUBL3_6oYWpXfd63FstouaAU4jOLrGvuLTxDuyBrTYOsc1r5K4x5Wxv4YFYe2eMEvdYlG28kovWV6eb8M60n-SxiNSl9XuCVVnm3gE5UrDFAB5-onF5tHyJUfi9NpZrpUqYqIi883TGntOBIVt" /></li>
-                    <li class="playlist-title">제4화<br>작은 사랑이 피었어</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제5화" data-subtitle="하룻밤을 함께 보냈다" data-iframe-url="https://drive.google.com/file/d/1SSc4heq03oityr8r9TwQvl6SWPcCVp7q/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczMOUeLCoPc2XQ_Tgj0LawN9sgABwteJEBfpkHy2Ypi1YKWHybzC3GwCpiyy2QbBqgf0hF2FhEBmYukgrb1UJwcNguh88MljxS5Mop7CU6bLyxpMlZ8fudmD6BEgs717Uox4m-qkHVfKs8RcbMO7UBWT" /></li>
-                    <li class="playlist-title">제5화<br>하룻밤을 함께 보냈다</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제6화" data-subtitle="내 등골도 얼어붙었다" data-iframe-url="https://drive.google.com/file/d/1rRrWD7Tz9De6zkuTsen5Wef2vYBWuw_p/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOReQ15ppK87dib2YflXKSoDu1ScOWBfIQH7CH_hLxHgXMHTYMEXXjE6b0XFQXsE8K-KpzmueVks1uBfq1ew5RhXT704wlye95SlO27ZyjgOQ-lfvfjYn3EKFBa3uPi--wI6I1FdM86xeiIALsvqRvv" /></li>
-                    <li class="playlist-title">제6화<br>내 등골도 얼어붙었다</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제7화" data-subtitle="그 애가 시집가 버렸어!" data-iframe-url="https://drive.google.com/file/d/1BC23gmSj_sPG16rx7YpMElnZYv0NafoT/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczPEe3qWqAgCFdsKI8Offd0XRSt_0ZLHeiZpwgDAfcUL875Nq8MovB9Svrzbmd0FJhL_5-uX65tcN01SJfFfV0IMk6zixBpFXNKOP8CodDX8noQc05ZKdqxDrjmikcbRVs4C8xuybO_NV9SMGt0YTBHp" /></li>
-                    <li class="playlist-title">제7화<br>그 애가 시집가 버렸어!</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제8화" data-subtitle="닭둘기에서 탈출하자!" data-iframe-url="https://drive.google.com/file/d/1i7EFqrJiIaOMxW4diDMDIOBf6vh97Oz-/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNz-u9-8nG4wHHC3ZNQijSXSfAWAuiVgOLy8xZkGkUbcQhC96poDeBaQAfvIYXDqJdvAO9gFlrxHm-qXS2VFKwslkXPvi0MIkj5ha20sGBFdZJnDoTkEVXbiVsJjhh-b0OvZjRcZkQ0zrHf-aZkO70h" /></li>
-                    <li class="playlist-title">제8화<br>닭둘기에서 탈출하자!</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제9화" data-subtitle="노래하는 거야, 사랑의 노래를" data-iframe-url="https://drive.google.com/file/d/1gKSzeJWUO9fgBu8yHcfL-F_p4ztUAeHK/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczPEFOzuwP1ir06urhH1aeD0RayeQOokgbdAIOT-ux4_DvmaYzLTBPEJnBcj-XwEu6PiDxK5DvDZ9tIH3ul1dw_Ndx6FfVoHYakrFuHCL2iSZcELXKNn46driY8qiDWtqvJAjpWIEDSQtwI0S250u6Ku" /></li>
-                    <li class="playlist-title">제9화<br>노래하는 거야, 사랑의 노래를</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제10화" data-subtitle="그 애 바통에 꽃이 핀다" data-iframe-url="https://drive.google.com/file/d/1JZVUkfUU0PURB1TTVKZetOAEix88yBm3/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNeH8NtiGY0MFHHye_2wr0wp-UAmMKXQY7RGGRsi5KV0FdUveWB1X424En23T1AULFxcXqt1fSlQjxs27W34HwFdPodA55ER5taYV5qB3HQ7IWxQSRdgj6ljOamoHrlIO3ZGF7u09tbtlsLKSw3r15U" /></li>
-                    <li class="playlist-title">제10화<br>그 애 바통에 꽃이 핀다</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제11화" data-subtitle="설마 그 소녀가 프린세스" data-iframe-url="https://drive.google.com/file/d/1O71-wjV5FWHYrh1u2xchwaNk6sOSh9Fd/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczO6o2BSwR1SgVGkJeaA5yFHih8YGU1F_bhkVGB28IHArDVU2hu9UiboAu6PIAiiIKQgooRiBTflZow-FGWbtUgBs1mmOnJFGv4bAcF6dxC03S9aDIevPAQQMxAxb3RL2GCXf1hOCCVI33hGFBUr_qdH" /></li>
-                    <li class="playlist-title">제11화<br>설마 그 소녀가 프린세스</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 제12화 [End]" data-subtitle="올해도 저물어간다" data-iframe-url="https://drive.google.com/file/d/1eaFzd1F_oiM6pQDPqE3w6-JCkIPV5Gxo/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczP-62qH68tmYYfUJERLhYv8lXd0z4G956vio_kYq0yN9OnjRjXwDKm3GkdnIs2Mx7t0W9rOITuKJ0kgNgEd88ksM_42_CBZep4RBbY3wPV7VJq7ojWu7HOCVY6YdBgPXA88Tx5-pJXTwYTqRvMpL2xx" /></li>
-                    <li class="playlist-title">제12화 [End]<br>올해도 저물어간다</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 오프닝 테마" data-subtitle="「드라마틱 마켓 라이드」" data-iframe-url="https://drive.google.com/file/d/1ca6Ksm6FQpG7GqtlwxgvFuasBaWd4O6O/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOmYN5F48ToUKyKNdQsu1STFDBNIAe7rXH8AIE0hlLpcTSd2Zq_BjN3u3dBjnmVOrd8kEo4M60bXapXkk3H0PaRskZlSOUWGTeKaEVLYbRVliMHSUNxlekWknrf3lZfefpN1jRmfi1iOQHwWj8g-7uV" /></li>
-                    <li class="playlist-title">오프닝 테마<br>「드라마틱 마켓 라이드」</li>
-                </ul>
-            </span>
-            <span data-title="타마코 마켓 엔딩 테마" data-subtitle="「잠버릇」" data-iframe-url="https://drive.google.com/file/d/1jic0XiCO85xnGKmPFK7nxOi4oIweRnAA/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczO3ziNaPeZ_sLVEpCTRQLYrRLvcvc0BO9H87_WBYHBvRoFXhr3jJhj7m9ZpsKOJKCs1TIrEv2X-5tdSoVGMYQpw5iKxsEoEru278IMput0id7Ew9ZES5WdjRVvKXk3kJqqoMmectS0ebEDHFCaxGtA_" /></li>
-                    <li class="playlist-title">엔딩 테마<br>「잠버릇」</li>
-                </ul>
-            </span>
-        </ul>
-    </ul>
-    <button onclick="topFunction()" id="gttopbtn">Top</button>
-    <script src="../js/gototop.js"></script>
-    <script src="tamako-market.js"></script>
-    <script src="../js/viewport-video.js"></script>
-    <script src="../js/hover-clicked.js"></script>
-</body>
-
+        <button onclick="topFunction()" id="gototop">Top</button>
+        <script src="tamako-market.js"></script>
+        <script src="../_js/viewport-video.js"></script>
+        <script src="../_js/gototop.js"></script>
+    </body>
 </html>

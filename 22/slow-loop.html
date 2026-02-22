@@ -1,139 +1,50 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>슬로우 루프</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="슬로우 루프" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczOF1DJOQErZF4Vo-BdJlmreUaq-3p-lALX7BmoaJjVA_QMF54-0P5SYzHP9d-l4g-cEuefiRxDHs2TFosZmVM_dM2wcneOawi4ryb3oIB_wZ76jSSyh0y9IfUeyBy0_xwuCs8w7cFHauLMu_yqeITL5" />
-    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczOxcg_kgHBBkyi26CwTI8ZEzB9pWpjavaYhzl5CBT9DfeXNhMzeKB2JTJURhYSonaD510bpm_rTeTj1czsQBlMlNekNBPt2TlY0ceFU4wnq0MsyW4nKNSdg4BiTVG1jyJVWYN2BF5a3XynK3VD31oM4" />
-    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczOxcg_kgHBBkyi26CwTI8ZEzB9pWpjavaYhzl5CBT9DfeXNhMzeKB2JTJURhYSonaD510bpm_rTeTj1czsQBlMlNekNBPt2TlY0ceFU4wnq0MsyW4nKNSdg4BiTVG1jyJVWYN2BF5a3XynK3VD31oM4" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" />
-    <link rel="stylesheet" type="text/css" href="../css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-mobile.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-tablet.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-desktop.css" />
-    <link rel="stylesheet" type="text/css" href="" />
-    <script src=""></script>
-</head>
-
-<body>
-    <div class="navbar">
-        <a class="main-title" href="../index.html">Tippy</a>
-        <a class="next">&#10095;</a>
-        <a class="year" href="../index.html#2022">2022년</a>
-        <a class="next">&#10095;</a>
-        <a class="sub-title" href="slow-loop.html">슬로우 루프</a>
-    </div>
-    <ul class="video-page">
-        <ul class="main-video">
-            <div class="image-container">
-                <img id="image1" src="" class="fade-img active">
-                <img id="image2" src="" class="fade-img">
-            </div>
-            <li id="video-main"></li>
+    <head>
+        <title>슬로우 루프</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="슬로우 루프" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczOF1DJOQErZF4Vo-BdJlmreUaq-3p-lALX7BmoaJjVA_QMF54-0P5SYzHP9d-l4g-cEuefiRxDHs2TFosZmVM_dM2wcneOawi4ryb3oIB_wZ76jSSyh0y9IfUeyBy0_xwuCs8w7cFHauLMu_yqeITL5" />
+        <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczOxcg_kgHBBkyi26CwTI8ZEzB9pWpjavaYhzl5CBT9DfeXNhMzeKB2JTJURhYSonaD510bpm_rTeTj1czsQBlMlNekNBPt2TlY0ceFU4wnq0MsyW4nKNSdg4BiTVG1jyJVWYN2BF5a3XynK3VD31oM4" />
+        <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczOxcg_kgHBBkyi26CwTI8ZEzB9pWpjavaYhzl5CBT9DfeXNhMzeKB2JTJURhYSonaD510bpm_rTeTj1czsQBlMlNekNBPt2TlY0ceFU4wnq0MsyW4nKNSdg4BiTVG1jyJVWYN2BF5a3XynK3VD31oM4" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" />
+        <link rel="stylesheet" type="text/css" href="../_css/index.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-mobile.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-tablet.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-desktop.css" />
+    </head>
+    <body>
+        <div class="navbar">
+            <a class="main-title" href="../index.html">Tippy</a>
+            <a class="next">&#10095;</a>
+            <a class="year" href="../index.html#2022">2022년</a>
+            <a class="next">&#10095;</a>
+            <a class="sub-title" href="slow-loop.html">슬로우 루프</a>
+        </div>
+        <ul class="video-page">
+            <ul class="main-video">
+                <div class="image-container">
+                    <img id="image1" src="" class="fade-img active">
+                    <img id="image2" src="" class="fade-img">
+                </div>
+                <li id="video-main"></li>
+            </ul>
+            <div id="main-video-title">슬로우 루프</div>
+            <div id="main-video-subtitle"></div>
+            <ul class="main-playlist">
+                <script src="../_js/video-data.js"></script>
+            </ul>
         </ul>
-        <div id="main-video-title">슬로우 루프</div>
-        <div id="main-video-subtitle"></div>
-        <ul class="main-playlist">
-            <span data-title="슬로우 루프 제1화" data-subtitle="아주 별난 여자아이" data-iframe-url="https://drive.google.com/file/d/1wFVL6paLimczA_YFTTHJLrI5ykrPrjrs/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOX7THn-FQvT0XKvfWw8NGkr5UlBejAJrPK1QTory14SKZMDiiwRcY_hbJLhECWHgG0ZKns14Stu6IRbaG_MwRCxFcn9wdBG05pLly6Z4VbFqECKK1Iir2xcX5kFoHNsP2AOK0YA-jgRVnugEvKEO-b" /></li>
-                    <li class="playlist-title">제1화<br>아주 별난 여자아이</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제2화" data-subtitle="웃을 수 있다면" data-iframe-url="https://drive.google.com/file/d/1XK9csB9ncrxDXhXZxQHkD2Ogq_ARiCWi/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczPluiLUyrk6JTc4kK2JVO7IWiqZzGKTLn8tUmXkgFy7YjEDObn56TT1rbrwscFcKgul4BVFhZ_6Zl-HyUX9ao_HNAGJeetBKLdArZmdaQFjQFoujhoN8iureNxfz5kE6YPiOrJg4v-dKgwKNXfNcvBS" /></li>
-                    <li class="playlist-title">제2화<br>웃을 수 있다면</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제3화" data-subtitle="고마워" data-iframe-url="https://drive.google.com/file/d/1VMNwBGpGtRsKXnI6FXK_L4z5AtvDbM0k/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOrJEwgloHwNzHlzyo5FxBDHpbIGpFV3i0pIYDXzbFBfeoMYC23LrK1BTLcx1FN4rcRos4w_hbB1QAZ11hRvqOPhId2T4mNNL2l21_5oz6m9OAptnUUa5Exyf4DYsepomv8AzcVdUHbMQLLgZ4cG2pw" /></li>
-                    <li class="playlist-title">제3화<br>고마워</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제4화" data-subtitle="부끄럽지 않으세요?" data-iframe-url="https://drive.google.com/file/d/1inQSC9ZBOwZnH5ceaOIbu-Osqqslsbs8/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczMULbZjuoPgOtiv9rrGh7xmnDIhDvE3y5BRZp1mWnaqlRyEC_Ppb597bIEEOpsebUZqGj5ORxeuMpgxg8FoDfB74DeSls0a1NypkTgK_b3JKKSQVEpevJBWQauedcc9lAoJ2ZRJ4CjZNdrt2t_LGTgG" /></li>
-                    <li class="playlist-title">제4화<br>부끄럽지 않으세요?</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제5화" data-subtitle="다음에도 같이" data-iframe-url="https://drive.google.com/file/d/1AqpCRah8FuyBQ-HKGSZQ_0dT-XChONkq/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNLB5BQ96GEa-7e_l_UHvJwJj3HRWrN-Zvk9n1oHfSZ7WdJKsdHBMxiP_wfbi8pLAX2cyQ63XQcJQowEC7Ff9ZlgC6NZxKjuXaObX8bHkjKY6NBhaHx_3CUCI81MMCyU1-qpeG01YfZktgS_hoRnBg5" /></li>
-                    <li class="playlist-title">제5화<br>다음에도 같이</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제6화" data-subtitle="어려움'이 즐거워" data-iframe-url="https://drive.google.com/file/d/1zsNutCWrP6HLCfBdj5DGx8YxFwsUqxWg/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNso9_uKCW8aCfXJqYwWxBZ9SP11y1RtqCKhufushNYEmSMo95c5hHkAPv7iz9E4Nm4UJah-6uOj52ccP-H6frUdlLCB-cO2KtY6BdWQikM13j_e-6tw4_7UceCzmeZ4en4q6XVWZaAuaMDrFqIglhb" /></li>
-                    <li class="playlist-title">제6화<br>어려움'이 즐거워</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제7화" data-subtitle="결혼식" data-iframe-url="https://drive.google.com/file/d/1zVyhhYd9kBo5fCqy0o4s-4IMtYZ9Q39L/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNAT0Iw4fGaRPlK0WJZJmPv2kJWdumRQ_eJ65WaO6oVsb7zBNS3znmljkQ1wOn_UinEs-sHkvfaqxzh-AAt5wwKCUSsIc5U85FIafZvFVGtARqNuohWuOty9_DzQX8RcCMSHTlbPlGRm_XzmR5GzPLo" /></li>
-                    <li class="playlist-title">제7화<br>결혼식</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제8화" data-subtitle="여기가 좋아" data-iframe-url="https://drive.google.com/file/d/1Fol1OB8I5lA7gdy66W8bM2_Vx7zszuMW/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczPNquND1D7xD44i2OuUzN9g4Plw4UaKcOXXX9sgAYwaiOmgD7bzpdW19iHLHmAW87a6tI6pO8lTXseauLyIT757gWCtilId9_PSlLUZM6Mfj43aYLyICCgE9NLIVEKpfsV7cvM7GiCC4dYWyxO4VBOs" /></li>
-                    <li class="playlist-title">제8화<br>여기가 좋아</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제9화" data-subtitle="낚시 캠핑 하고 싶어!!" data-iframe-url="https://drive.google.com/file/d/1GmWYHANp3zloP5tiGwhoJXEkYXvTDEyF/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNxVL9nvR0vCWhcKMH2eVCGXiYm7Jdnt3YsyBnqXqXXPMMvNsaxWVxER77gT2nwXY9zjjQQ0CZRPUiJaxGkz8kevMEjUUzIqJwM-2jHH11K8y1ilQq8bMG0T4fCXqKqRJtxhLnXOUGrdN_SheR59p29" /></li>
-                    <li class="playlist-title">제9화<br>낚시 캠핑 하고 싶어!!</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제10화" data-subtitle="저도 열심히 할게요" data-iframe-url="https://drive.google.com/file/d/1BOYz2ZBLQeeQYOF7GdGH-miTdiZrMTjs/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczMd4rjRw-ILbcCnZSHDxNHlcgnJQHPfCIxIOrZcLgrsZzCMTnw9CmNbd8iJ-N4vOgL8spSFqcc9i-dHm0wNhvZQscZLsHXzjAOBWZZbo_4nwUVtcR_1P2HMYtlt-K88RZidTmbLk9egFh8ngzevSM54" /></li>
-                    <li class="playlist-title">제10화<br>저도 열심히 할게요</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제11화" data-subtitle="소중한 것" data-iframe-url="https://drive.google.com/file/d/16w_ppjBTfwhYDl9f5_C-xYq4dtixmAPS/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOoKxAhBb1M15tPVs-ZfHxT_rGis6F_9ynTSkfwEielU3I2WQdAiinlIlLLcrgeEACmBD76e-Q_zrzq6Tysi9lK6QfaQhKHVGzFL0NbOUfdJ3zzNmR1apPAiFWGD1ZyS1WOSVEUUwVaO3BEphR0g2VK" /></li>
-                    <li class="playlist-title">제11화<br>소중한 것</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 제12화 [End]" data-subtitle="둘이서 골라보자" data-iframe-url="https://drive.google.com/file/d/1tBo1dNrqaa0RkjFrPFcfZbgbEJgDmgMv/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczPCTJYMsMJ_8ulVJwUuC3azrmgB0GD-f3lq53yVo4bXv4bXiKCXnbBRBdqHlVRWRetdHGU3iYlumHt35_64B-TST_fcw4rca43LY2iFeTEd-4H93AO71iowl15GnbvZOGIR7GE40g4BwdQreFkp9lDw" /></li>
-                    <li class="playlist-title">제12화 [End]<br>둘이서 골라보자</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 오프닝 테마" data-subtitle="「이정표→」" data-iframe-url="https://drive.google.com/file/d/1cPmuPxSNApilQdLDiQWdAgfYPzkrpks3/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczMeWinW8zqrF6eXGTqxp-3HdpCuNmBiD9X2U_3RmYg1vuKlM9vMB9mSdIfg_8nqOxQIfdRp2oP_-g52npUuESrj7GyBeRT7RLaE-jtPY-pIMFBd3NIy46SkTD6KHFHwA6YfaJ8SCFpl8KByiCEtuT6H" /></li>
-                    <li class="playlist-title">오프닝 테마<br>「이정표→」</li>
-                </ul>
-            </span>
-            <span data-title="슬로우 루프 엔딩 테마" data-subtitle="「슈와 슈와」" data-iframe-url="https://drive.google.com/file/d/14UEqsUBGb1ulUo4bU-PjoPDZSENLpMTa/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOF1DJOQErZF4Vo-BdJlmreUaq-3p-lALX7BmoaJjVA_QMF54-0P5SYzHP9d-l4g-cEuefiRxDHs2TFosZmVM_dM2wcneOawi4ryb3oIB_wZ76jSSyh0y9IfUeyBy0_xwuCs8w7cFHauLMu_yqeITL5" /></li>
-                    <li class="playlist-title">엔딩 테마<br>「슈와 슈와」</li>
-                </ul>
-            </span>
-        </ul>
-    </ul>
-    <button onclick="topFunction()" id="gttopbtn">Top</button>
-    <script src="../js/gototop.js"></script>
-    <script src="slow-loop.js"></script>
-    <script src="../js/viewport-video.js"></script>
-    <script src="../js/hover-clicked.js"></script>
-</body>
-
+        <button onclick="topFunction()" id="gototop">Top</button>
+        <script src="slow-loop.js"></script>
+        <script src="../_js/viewport-video.js"></script>
+        <script src="../_js/gototop.js"></script>
+    </body>
 </html>

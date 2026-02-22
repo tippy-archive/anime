@@ -20,13 +20,6 @@ randomimages[10] = "https://lh3.googleusercontent.com/pw/AP1GczPAulNGUzyEnnJi4FC
 randomimages[11] = "https://lh3.googleusercontent.com/pw/AP1GczP9MNZ_KuAhWjGFLopL9CbXriVPcJ_b5UUtaYseg_Y9HXCigDfYBUVErWUBG57JK5Sp2d2yZii0mrKLvDdY0_8mHqR7vBbl8biz-d7NmW78ptIv9CR9zs8iI42OXw_ZySaG9oy7VBLIuv5PjWcH1aRt=w1920-h1080"
 randomimages[12] = "https://lh3.googleusercontent.com/pw/AP1GczPcmVcZoxMco576_nDsup8016T3O1zcPEE8bCKXQFIPiwTq9k8BWTnb6aIiX-_yoIcysD0DmxcIk1A_EF78foiK5rg5NzYxWvzcu7hZB4vnNrOYAKfyRjZmhnflaZGVoFYISWeivPN9iPuHYmraUduV=w1920-h1080"
 randomimages[13] = "https://lh3.googleusercontent.com/pw/AP1GczP7BJ5anOfx-mspAuBue2WJs2Rm47NWOaGNgCtGh5NjCGgUDWGgJNuohWyYSeTEoDgbkLKYIF3RlmjE1Zj7WbukstM07CgoPO0FJTcUnYYfhL9zRRjiSYmKpcNgB-AUQCp4M9uIUjbF8eAZEb9x5QBk=w1920-h1080"
-randomimages[14] = "https://lh3.googleusercontent.com/pw/AP1GczOBszS9ud_9PRPTgAtSWlmbqOb5WjhDuuIWxbt0V8Ot6QYbVtVnL1sql3X7V2sVpa0rT08x_e1Vdl4re1BHqdTSY-uMWFJSAT-qa2JvhcfvvM3cOCrccKSMl84pxIMEHR0mZ_YjyFLC_71XiqHHWl3_=w1920-h1080"
-randomimages[15] = "https://lh3.googleusercontent.com/pw/AP1GczPr1y4ZMpbJma3YaDaXxSVG2X5uCXmsgJ-j8Y3Rt-jnyb3w9RtGBsBe2_tZKNy-qbqKHa92mf5hEU_Dq4nxsHvDjjYzZArgkZTsLZ_ZeU6M63JTiisW4sl7uXN4mrBl9qn70nzfDWyfu6qNplgv2GKO=w1920-h1080"
-randomimages[16] = "https://lh3.googleusercontent.com/pw/AP1GczMFZFVQ7KeW8ZlYuiD8ZRiPIkVqnDkIq7Vuf06YfYDr7R_j_W2zsK2-5ytpgxenv3T9_Tl9S0f17bXXtal5PFhrkRbkAvUIeVpn9nEmkh5LRbJ86HfkocEc5SWtn3fN4uHlFknbjBfnwVsBYhTf9Fhk=w1920-h1080"
-randomimages[17] = "https://lh3.googleusercontent.com/pw/AP1GczOe8ZWQXF6R1Pi-tsYtAJBHis8CYx6cJ5Sw3xVOJHlanRrGtcp-AWZ_isVcQI_ncL3VL5mGR1x0AMtbnCIH_Ao-HHLAr1wWcm1BkzXpwZiu0Jn1ewUP4BM85RziiEhh-SN607t7FK_0hgQgDPUYQXv9=w1920-h1080"
-randomimages[18] = "https://lh3.googleusercontent.com/pw/AP1GczMBy-ADcIkItZWxopC4LVaJcZtv6NOXY38OveytymTpZc3LZn2-kO-tW7X0L-fbyP-FItlKeXe2wwvigsugMyE3HSlwlFNEZS99Cl5HeDkJFHgrsLwjaXNV8yqmTpAVu_gLm_1Poo78ozRBk2JM9_jj=w1920-h1080"
-randomimages[19] = "https://lh3.googleusercontent.com/pw/AP1GczPR4FuFOVvHsPCeCyoixWBeIjmerNFhlJWQolNObmlXSJhXEeWBCwH7Gu6fc3h5BLoIWFDoK_cVAL-vlGXFeV-ii3PNVXB7Va3aFIfAvhWN5emizv5LgAGeVvz6HNzVvkCGK7YQhmQX9PcqtkoMgL5i=w1920-h1080"
-randomimages[20] = "https://lh3.googleusercontent.com/pw/AP1GczOtRShxuV-8V7hRtwmT-NMQcEVqCGtvARujYJ4f6A4ERBdYERiO1KXov_TNxJRZKsPXg9_H08YxPhn3AH1GdmNfl_ubCfUyJ7jAr0TIlQSYiD095Mxf2HEqz61maeHcnhCnxgOfEuSBfmqnPxNRql_E=w1920-h1080"
 
 var initialImageIndex = Math.floor(Math.random() * randomimages.length);
 document.getElementById('image1').src = randomimages[initialImageIndex];

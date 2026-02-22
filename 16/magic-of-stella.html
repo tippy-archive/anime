@@ -1,169 +1,50 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>스텔라의 마법</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="스텔라의 마법" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczNvQzhjMKbhrzM0lwG5sfJMPB1RH7F0w9LL2kimYuaf6B5Pk3W4_zoH1SSJJjDUhtlYfvvwnfTDi-of_up4lDcl4bksbZYY2hfywDrOT2-3s30vl_R8Qjs4VnMNPQi_lzlJJaSpJCzY3ChG4DNaPP0h" />
-    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczPMNxumBp7QT_OfiB4mLskVrWn8ogOnAFdYuZNmVXSv5E7UvPr1H9dpfcZyGH2p5Cq-TWmXUViO0LGidQjIrwjW2T1_mZvdlGJE77go4_lwlPjcedN9E5nV5ENh3zGNsBgkqxylPdjuTu3EzD71NhYU" />
-    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczPMNxumBp7QT_OfiB4mLskVrWn8ogOnAFdYuZNmVXSv5E7UvPr1H9dpfcZyGH2p5Cq-TWmXUViO0LGidQjIrwjW2T1_mZvdlGJE77go4_lwlPjcedN9E5nV5ENh3zGNsBgkqxylPdjuTu3EzD71NhYU" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" />
-    <link rel="stylesheet" type="text/css" href="../css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-mobile.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-tablet.css" />
-    <link rel="stylesheet" type="text/css" href="../css/video-page-desktop.css" />
-    <link rel="stylesheet" type="text/css" href="" />
-    <script src=""></script>
-</head>
-
-<body>
-    <div class="navbar">
-        <a class="main-title" href="../index.html">Tippy</a>
-        <a class="next">&#10095;</a>
-        <a class="year" href="../index.html#2016">2016년</a>
-        <a class="next">&#10095;</a>
-        <a class="sub-title" href="magic-of-stella.html">스텔라의 마법</a>
-    </div>
-    <ul class="video-page">
-        <ul class="main-video">
-            <div class="image-container">
-                <img id="image1" src="" class="fade-img active">
-                <img id="image2" src="" class="fade-img">
-            </div>
-            <li id="video-main"></li>
+    <head>
+        <title>스텔라의 마법</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="스텔라의 마법" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczNvQzhjMKbhrzM0lwG5sfJMPB1RH7F0w9LL2kimYuaf6B5Pk3W4_zoH1SSJJjDUhtlYfvvwnfTDi-of_up4lDcl4bksbZYY2hfywDrOT2-3s30vl_R8Qjs4VnMNPQi_lzlJJaSpJCzY3ChG4DNaPP0h" />
+        <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczPMNxumBp7QT_OfiB4mLskVrWn8ogOnAFdYuZNmVXSv5E7UvPr1H9dpfcZyGH2p5Cq-TWmXUViO0LGidQjIrwjW2T1_mZvdlGJE77go4_lwlPjcedN9E5nV5ENh3zGNsBgkqxylPdjuTu3EzD71NhYU" />
+        <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczPMNxumBp7QT_OfiB4mLskVrWn8ogOnAFdYuZNmVXSv5E7UvPr1H9dpfcZyGH2p5Cq-TWmXUViO0LGidQjIrwjW2T1_mZvdlGJE77go4_lwlPjcedN9E5nV5ENh3zGNsBgkqxylPdjuTu3EzD71NhYU" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" />
+        <link rel="stylesheet" type="text/css" href="../_css/index.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-mobile.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-tablet.css" />
+        <link rel="stylesheet" type="text/css" href="../_css/video-page-desktop.css" />
+    </head>
+    <body>
+        <div class="navbar">
+            <a class="main-title" href="../index.html">Tippy</a>
+            <a class="next">&#10095;</a>
+            <a class="year" href="../index.html#2016">2016년</a>
+            <a class="next">&#10095;</a>
+            <a class="sub-title" href="magic-of-stella.html">스텔라의 마법</a>
+        </div>
+        <ul class="video-page">
+            <ul class="main-video">
+                <div class="image-container">
+                    <img id="image1" src="" class="fade-img active">
+                    <img id="image2" src="" class="fade-img">
+                </div>
+                <li id="video-main"></li>
+            </ul>
+            <div id="main-video-title">스텔라의 마법</div>
+            <div id="main-video-subtitle"></div>
+            <ul class="main-playlist">
+                <script src="../_js/video-data.js"></script>
+            </ul>
         </ul>
-        <div id="main-video-title">스텔라의 마법</div>
-        <div id="main-video-subtitle"></div>
-        <ul class="main-playlist">
-            <span data-title="스텔라의 마법 #1" data-subtitle="스타트 지점" data-iframe-url="https://drive.google.com/file/d/1LDAPAIMtvreQUzX6g0oWhmH1Smnd3jQi/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOPNc7K_IeEOG0h0AhVh75gNBqS5Q8Y3tSy9qMmxKitK7NoUltcni1mCBPPNZ02ywAU8eSVp92vGXPtrorX-0hb0jRNmZtrezywow4hd9pEF--NnI1xTzlP-zNzqq5pI1XDg6XUVfTtidw4C2hwjIMj" /></li>
-                    <li class="playlist-title">#1<br>스타트 지점</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #2" data-subtitle="즐거운 창작" data-iframe-url="https://drive.google.com/file/d/1OQ-nE5I4q1Bc2XJPoRWnBC6cxtWsKsAM/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczN-SvQt3VuRdKM5tN720dguhEEhYVKpu_luhReg12l4hOEYkfdbzIc8y4z57Sce8LQJdlHRYgB3EXlnRdcocK0gCbEycn_h1OP0mtRGIOcs2BhIuAx7oDV-7wJoY0j_GRvt-B6-0TSdbDw_pUnFVRel" /></li>
-                    <li class="playlist-title">#2<br>즐거운 창작</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #3" data-subtitle="전도 아이템" data-iframe-url="https://drive.google.com/file/d/1QQG-2NRpQJ688dUVNZrkJqoxGq-brKYv/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczO-y_sRYHVB8RYTxMI5NzMSuDyQHZTvSpuBiBhFtjvQVYQGRVNZPgRyPJb2mWLS1e_Sc1NcicQnpb5zDomjrQTJuWyM84MysOJY0MZ3HEAIF6oBJqSP8LHRH5Jpr1BcH-MxBnsVoQKBYRZWQ956QdzZ" /></li>
-                    <li class="playlist-title">#3<br>전도 아이템</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #4" data-subtitle="스킬 업" data-iframe-url="https://drive.google.com/file/d/1pZqHbDqdia59MDCSPDW33lgpK8jr_8Yj/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOcKJzS3JRmDWj7Gdlm4EwNIVlolrFfD64Nw4gLp5cHBJS6qeQYOD_BKjPQpQeXe0CuQ0W_uWBQOs9ZjknWJbGGBJF4oZ1iAiWb8kCJHisubNf6G-_9VvLr4xPjrabFgf6zeOFpFB-3lnFozIgOTeYC" /></li>
-                    <li class="playlist-title">#4<br>스킬 업</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #5" data-subtitle="카운트다운" data-iframe-url="https://drive.google.com/file/d/1ByIGVyfLq30YHgUGX03dxHfDe3GljtkG/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOp1fKW9LpMC9MLAVCthmNOzgNCRhzFIyktXnB5T1gxLa-yxBT_f8ZGzegucTzoEoaxEFhsdBDlOsr3MVSpwPHVY1mjffHz8oQzriY29evh-DdhuZXlY66YOw2_0RGqrqNJfvQxUZ6teznnKLKXkR-y" /></li>
-                    <li class="playlist-title">#5<br>카운트다운</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #6" data-subtitle="즉석 판매회" data-iframe-url="https://drive.google.com/file/d/15lsDxN2AwbjJpyyXi0GTFnYRqRTO4Xyh/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczPP6tvKxGD0JzykvFGyf-0xDljSwaJVKxDRWN8y6SLn3Ghjtbk0CKSYlRvb3ROkZDOOJ87uOsgxX5lpPCPZ44KLQ2VbhpJapPEsxYke9RQhQY6d6AyJdxNjVlZ99FzdWRtnmfPtOx39DOddOSqoPdK7" /></li>
-                    <li class="playlist-title">#6<br>즉석 판매회</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #7" data-subtitle="첫 추억" data-iframe-url="https://drive.google.com/file/d/1DA4-0lQ4rwYHoNDplkn4gB8zCBGOWexM/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNcnTHoSEfL3bN1SOI2bjbAf7-PjkOgS-Tpuv7_L6ZzIFBN-3_hXla2I3MBN0sI9wysGWq5HG27c04Hrt1qjxBAjCkaepTHiV1YTuWh3kFD5CZOXnM6tbd9WqOlLX40KNC5Oex3L4iKIB3VzWpcul3Q" /></li>
-                    <li class="playlist-title">#7<br>첫 추억</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #8" data-subtitle="디버그를 얕보면 안 돼?" data-iframe-url="https://drive.google.com/file/d/1ykVnxciO83foC6_G9KcMkklxQDrOQGMb/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczMrresqCh6gBBTWajvL3OPUmgiUG8ooVjr1GZOCjtd2CGHqi2HDvyvrKRfwmZMY8jBZV1y3Y3WOLPiLtiSbzCmNVJBYAmXy-WXEy7ad4S80sLVw8Oh25q7O4ShFDPSx6sMuWjJJNG1BWoZp0X-WlVCV" /></li>
-                    <li class="playlist-title">#8<br>디버그를 얕보면 안 돼?</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #9" data-subtitle="스킬 업 2" data-iframe-url="https://drive.google.com/file/d/1F3ErQSMUA7_TdlLacZNTBkunh1yfU4Kc/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNlmvLzWlh_ldpJJtbzEPXnFh7FfUeqt1J0BtgLSvhwRgO6ZDq7xSy5ZFa543zdoWUW-AWsbwlLqG7GBNYajEysEtFKiXBuCo96VLBS_HnvpraaB3oLsS-kFT1vI8tcCVtFoCuoZQpbOQuZ4X74K22i" /></li>
-                    <li class="playlist-title">#9<br>스킬 업 2</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #10" data-subtitle="정밀 기계" data-iframe-url="https://drive.google.com/file/d/1OO2eFZElzih7DmGebmiGZNaogyMfXtVT/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczMYbH_piRjWJpxJMLm1Uw-OPVs2bEBzBiAYppsYDJEdcXaoYryylyG5iE2oSlDv2n42vB6UsbxdHAaT716haLf8alJFKtxM34TNpJsL-zRupn-8oWZLYST2PEBjBVy40XBypQtZxJm6TuG87gZ6WcKc" /></li>
-                    <li class="playlist-title">#10<br>정밀 기계</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #11" data-subtitle="곤란하신가요? 아가씨" data-iframe-url="https://drive.google.com/file/d/1qVbeVIedeYvSPxf_k5XxpoHmwnQ_JGRV/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOyswXOT7loTcrfEVT4YoJSnqqYzBfjqPGyj1jRND3DUd0z6lGmjq81cKOoQmM5j3lB29qbKuHEJ3QMySRdd3uQfmLB29orZV-DKKEJa0Te0R1dmlFCBS8b7Y464_q6uc3-nKA-yW5e4-zF10yA-TcY" /></li>
-                    <li class="playlist-title">#11<br>곤란하신가요? 아가씨</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 #12 [End]" data-subtitle="다시 한 번 스타트 지점" data-iframe-url="https://drive.google.com/file/d/1mm4rOqrQxl_gXoPrB1go23PU8BcN55Gh/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNvQzhjMKbhrzM0lwG5sfJMPB1RH7F0w9LL2kimYuaf6B5Pk3W4_zoH1SSJJjDUhtlYfvvwnfTDi-of_up4lDcl4bksbZYY2hfywDrOT2-3s30vl_R8Qjs4VnMNPQi_lzlJJaSpJCzY3ChG4DNaPP0h" /></li>
-                    <li class="playlist-title">#12 [End]<br>다시 한 번 스타트 지점</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 OVA #1" data-subtitle="카요의 생일 (도중까지)" data-iframe-url="https://drive.google.com/file/d/1d5x82WkdqQoUdu48L6lz12YGwmtWYmym/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczM6RkuDFrBcHOIqz4Y4RvjfRufpsIPTnm1oWTuZnY-vqCxvzhOV-qK_ABCEraBxZ35fw8veQw3Zy0BVBvHS3K5CZJxZA5rZGcf-GxP5T6wMB8hABoytQdQ_WQChyP_EZrprHaZGSbUhxWDfD3q8V4gg" /></li>
-                    <li class="playlist-title">OVA #1<br>카요의 생일 (도중까지)</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 OVA #2" data-subtitle="카요의 생일 (도중까지)" data-iframe-url="https://drive.google.com/file/d/1Pr1wVUxtz0u4py7Y9otZNMUa2QyR5zSH/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczMFs_540OpV2i0OqQ8FpSThLgf8dCo835AJuBHVXDgq5ClpqCEDzkodTae64GgwYdcD3UT_cQcdhIavwuTs6wRIHkjXh7Zv6E39-S_gJYYNteS4w8SDVMG7wq-Iq4NvdC8yNgNT-7QD7t_bQCeL_Smy" /></li>
-                    <li class="playlist-title">OVA #2<br>카요의 생일 (도중까지)</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 오프닝 테마" data-subtitle="「God Save The Girls」" data-iframe-url="https://drive.google.com/file/d/12SQJuQqZ9Pvwsovu2Ljq2UAJzTOUj0Mq/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOfLAMsILPxxwIHr_qDSV-2mK7THvPYys_UkU-9vyUEN0WJrBHmxyYFcJoQA1C50LDaXpZJ2ZCSqPEDZDw0wpDKfxIkr8YNXrCkPL_vVZBWdIKJMFrgul2LhcxmIRJhzb8mxFm7aWnolbZoDtoV0aEN" /></li>
-                    <li class="playlist-title">오프닝 테마<br>「God Save The Girls」</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법 엔딩 테마" data-subtitle="「한밤중의 매지컬」" data-iframe-url="https://drive.google.com/file/d/1hlf_1s8b7UbXwLZPYLdxmb7UwyMr5OdL/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOnIryEs1OJevpvOm7xUk1rxAz7zJQMBqhK-SNWbxpfcxROnxcCkMu9d5XEfpDIRW0r_lJTM193pAVPVvOO5jbYQu_rmIau2XBLXVpYcZSp8ujyplqmH0W1dviFeRmrkno2hyxx1G1ictFyCPwcoR1f" /></li>
-                    <li class="playlist-title">엔딩 테마<br>「한밤중의 매지컬」</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법" data-subtitle="Special Project - 01" data-iframe-url="https://drive.google.com/file/d/1tixZUZTQX5KD3-loyfIgjSdDMZztYn8g/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczNJgrPt5ZtNECd6e8r_oOyy1D56PZ3QJtBpzBHSv0ALq9CD056XsX5tNx2L_2GjuhwSfjjIHQaZ0TXfE0wORbOJcX5lWRNMtUmauGk76sxokK3ByIVhcRpS6BC2jUSHnbYO1YesUx0FiGgGxDW2stWe" /></li>
-                    <li class="playlist-title">스텔라의 마법<br>Special Project - 01</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법" data-subtitle="Special Project - 02" data-iframe-url="https://drive.google.com/file/d/1k34olwAEaW1E8rZz_Y1_H4rzhvqV_CBe/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOTWLwYHCLdYhPxmRFC2iccR8XY32OoAuB0PU46d49Nyg2UuyYUYwXDU42HvTIN-zFoIN6FOVSpV1JKScyZVl0H22_c1og-GTYsGARrofRZTjwVMj5qjMA4-_m-XZriFFfBEmENfAK_xOOAag_iu1-7" /></li>
-                    <li class="playlist-title">스텔라의 마법<br>Special Project - 02</li>
-                </ul>
-            </span>
-            <span data-title="스텔라의 마법" data-subtitle="Special Project - 03" data-iframe-url="https://drive.google.com/file/d/1XC46qLybCwVDGEj4hi3Z3AB__3lA9GuN/preview">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="https://lh3.googleusercontent.com/pw/AP1GczOgIQA3A-gN9FH3_1fQqrxQ3xTGJFacUC_gXJmrOiAEZh5VX4hVfAcDmkfyczysXfEJbq0RkWIKUUc-sMrgYH__OocQFYduwrGubWxLFHo3Iy6ZqQZIE4jy1dHSVeJ9DwSpd4TqqK3iMb8i3p0bQyXU" /></li>
-                    <li class="playlist-title">스텔라의 마법<br>Special Project - 03</li>
-                </ul>
-            </span>
-        </ul>
-    </ul>
-    <button onclick="topFunction()" id="gttopbtn">Top</button>
-    <script src="../js/gototop.js"></script>
-    <script src="magic-of-stella.js"></script>
-    <script src="../js/viewport-video.js"></script>
-    <script src="../js/hover-clicked.js"></script>
-</body>
-
+        <button onclick="topFunction()" id="gototop">Top</button>
+        <script src="magic-of-stella.js"></script>
+        <script src="../_js/viewport-video.js"></script>
+        <script src="../_js/gototop.js"></script>
+    </body>
 </html>
