@@ -10,7 +10,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar {
-    background-image: linear-gradient(62deg, #d3abfb 20%, #75b8fb 100%);
+    background-image: linear-gradient(60deg, #CBA2FF 0%, #6EC0FF 100%);
     overflow: hidden;
     text-align: center;
 }
@@ -63,7 +63,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main-playlist span :hover {
-    background-color: #e7d3fb;
+    background-color: #DFC7FF;
     border-radius: 8px;
 }
 
@@ -86,7 +86,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .playlist-main.selected {
-    background-color: #d3abfb;
+    background-color: #CBA2FF;
     border-radius: 8px;
 }
 
