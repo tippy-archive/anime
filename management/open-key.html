@@ -1,30 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
-    <title>Archive Open-Key Management</title>
+    <title>Archive Open-Key Management & Hasher</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Archive Open Key Management" />
-    <meta property="og:description" content="integrated ver. 260201" />
+    <meta property="og:title" content="Archive Open Key Management & Hasher" />
+    <meta property="og:description" content="integrated ver. 260201 with SHA-384" />
     <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczMH_k6dw8yhmJBkVHU0WSs9D0lxriaF3DqVZ4wi1cQt1Djln6xF9eH-OlkEjuvZuLusAPWeQT1-R_xkp7CQrpo3u4Tj6AKsZe2rk0t3LvQLsfoete7Oo9rwac3xQEM5aKT9bneHZsXNnqTstGV8wrF9" />
     <link rel="shortcut icon" href="https://lh3.googleusercontent.com/pw/AP1GczMbpSX92DIho7-vZydv18Kj0pUeJiPlHMEiF9V6ufXZ7j-MpbH7d_YmXn_WfpT3DNR3uHVlfOYvpzaxifVa7EY0Eq1mJn8Rq8_sueAC7E58jZpTLiaju3BG_--TRK-bE9bRDF_OXBH5JSwC0rDuh6XK" />
     <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczMbpSX92DIho7-vZydv18Kj0pUeJiPlHMEiF9V6ufXZ7j-MpbH7d_YmXn_WfpT3DNR3uHVlfOYvpzaxifVa7EY0Eq1mJn8Rq8_sueAC7E58jZpTLiaju3BG_--TRK-bE9bRDF_OXBH5JSwC0rDuh6XK" />
     <link rel="stylesheet" type="text/css" href="open-key.css" />
+    <style>
+        /* --- 해시 생성기 및 통합 UI 디자인 --- */
+        :root {
+            --primary: #007bff;
+            --primary-hover: #0056b3;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #333;
+            --result-bg: #f8f9fa;
+        }
+
+        body { 
+            background-color: var(--bg); 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 40px 20px;
+            color: var(--text);
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .container h2 { 
+            margin-top: 0; 
+            font-size: 1.5rem; 
+            text-align: center; 
+            color: var(--primary); 
+        }
+
+        textarea { 
+            width: 100%; 
+            height: 120px; 
+            padding: 12px; 
+            border: 2px solid #e9ecef; 
+            border-radius: 8px; 
+            box-sizing: border-box; 
+            resize: none; 
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus { outline: none; border-color: var(--primary); }
+
+        .result-box { 
+            background: var(--result-bg); 
+            color: var(--text); 
+            padding: 1rem; 
+            border-radius: 8px; 
+            word-break: break-all; 
+            font-family: 'Courier New', monospace; 
+            font-size: 0.9rem;
+            min-height: 60px;
+            margin: 20px 0;
+            border: 1px solid #dee2e6;
+        }
+
+        .controls { display: flex; gap: 10px; }
+        
+        button { 
+            flex: 1;
+            padding: 10px; 
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-weight: 600; 
+            transition: background-color 0.2s;
+        }
+
+        .btn-copy { background: var(--primary); color: white; }
+        .btn-copy:hover { background: var(--primary-hover); }
+        .btn-clear { background: #e9ecef; color: #333; }
+        .btn-clear:hover { background: #dee2e6; }
+
+        /* 테이블에 모던한 그림자 및 둥근 테두리 추가 (open-key.css 보완) */
+        table {
+            background: var(--card-bg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        td, th {
+            border-bottom: 1px solid #e9ecef;
+            padding: 12px 15px; /* 가독성을 위해 패딩 증가 */
+        }
+        
+        tr:last-child td { border-bottom: none; }
+
+        .section-title {
+            width: 100%;
+            max-width: 700px;
+            margin: 10px auto;
+            font-size: 1.2rem;
+            color: #333;
+            text-align: left;
+        }
+    </style>
 </head>
 
 <body>
+
+    <div class="container">
+        <h2>SHA-384 Generator</h2>
+        
+        <textarea id="inputText" placeholder="변환할 텍스트를 입력하세요..."></textarea>
+        
+        <div class="result-box" id="result">여기에 해시값이 표시됩니다.</div>
+
+        <div class="controls">
+            <button class="btn-clear" onclick="clearText()">지우기</button>
+            <button class="btn-copy" onclick="copyAndSave()">복사 및 기록에 추가</button>
+        </div>
+    </div>
+
+    <table id="historyTable" style="display: none;">
+        <thead>
+            <tr>
+                <th style="width: 30%;">원본 텍스트</th>
+                <th style="width: 70%;">생성된 해시 (클릭하여 복사)</th>
+            </tr>
+        </thead>
+        <tbody id="historyBody">
+        </tbody>
+    </table>
+
+    <h3 class="section-title">Archive Open-Key List</h3>
+
     <table>
         <thead>
             <tr>
-                <th>계정</th>
-                <th>공개키</th>
+                <th style="width: 30%;">계정</th>
+                <th style="width: 70%;">공개키 (클릭하여 복사)</th>
             </tr>
         </thead>
         <tbody id="table-body">
             </tbody>
     </table>
+
+    <script>
+        const inputArea = document.getElementById('inputText');
+        const resultArea = document.getElementById('result');
+        const historyTable = document.getElementById('historyTable');
+        const historyBody = document.getElementById('historyBody');
+
+        inputArea.addEventListener('input', calculateHash);
+
+        async function calculateHash() {
+            const text = inputArea.value;
+            if (!text) {
+                resultArea.innerText = '여기에 해시값이 표시됩니다.';
+                return;
+            }
+
+            const encoder = new TextEncoder();
+            const data = encoder.encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-384', data);
+            
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            
+            resultArea.innerText = hashHex.toUpperCase();
+        }
+
+        function clearText() {
+            inputArea.value = '';
+            resultArea.innerText = '여기에 해시값이 표시됩니다.';
+        }
+
+        function copyAndSave() {
+            const resultText = resultArea.innerText;
+            const originalText = inputArea.value;
+
+            if (resultText.startsWith('여기') || !originalText) return;
+            
+            // 클립보드에 복사
+            navigator.clipboard.writeText(resultText).then(() => {
+                const tempText = resultArea.innerText;
+                resultArea.innerText = "복사 및 기록 완료!";
+                setTimeout(() => resultArea.innerText = tempText, 1000);
+            });
+
+            // 표에 기록 추가
+            historyTable.style.display = 'table';
+            
+            const newRow = document.createElement('tr');
+            const displayText = originalText.length > 15 ? originalText.substring(0, 15) + '...' : originalText;
+            
+            newRow.innerHTML = `
+                <td>${displayText}</td>
+                <td><span class="public-key" onclick="copyFromTable('${resultText}')">${resultText}</span></td>
+            `;
+            
+            historyBody.insertBefore(newRow, historyBody.firstChild);
+        }
+
+        // 해시 테이블 전용 복사 함수 (open-key.js의 함수와 충돌하지 않도록 분리)
+        function copyFromTable(hashValue) {
+            navigator.clipboard.writeText(hashValue).then(() => {
+                alert('해시값이 복사되었습니다!');
+            });
+        }
+    </script>
+
     <script src="open-key.js"></script>
 </body>
 
