@@ -62,8 +62,8 @@ body::-webkit-scrollbar-thumb {
     overflow-y: scroll;
 }
 
-.main-playlist span :hover {
-    background-color: #DFC7FF;
+.main-playlist span:not(.selected) .playlist-main:hover {
+    background-color: #DFC7FF !important;
     border-radius: 8px;
 }
 
@@ -86,8 +86,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .playlist-main.selected {
-    background-color: #CBA2FF;
+    background-color: #CBA2FF !important;
     border-radius: 8px;
+    cursor: default;
+    pointer-events: none;
+}
+
+.playlist-main.selected * {
+    pointer-events: auto;
 }
 
 .playlist-img {
