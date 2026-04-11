@@ -15,7 +15,7 @@
                     .map(item => `
                         <a href="${item.u}" class="list-item">
                             <ul class="list-select playlist-main">
-                                <li class="list-img"><img src="${item.i}" alt="${item.t}"/></li>
+                                <li class="list-img"><img src="${item.i}" loading="lazy" alt="${item.t}"/></li>
                                 <li class="list-title"><p>${item.t}</p></li>
                             </ul>
                         </a>
