@@ -2,7 +2,7 @@
     if (window.innerWidth > 480) return;
 
     const loadingImages = [
-        "https://lh3.googleusercontent.com/pw/AP1GczO0fgif17Ugtkd7VukgNGQtLM0KgJToR6Qbo40tuWKTKgntw5jGHOFBWVq1S1MNtg6zW5hZvFHjEFxuh3mUR8zqmIVwkOLpcQFAooNSXljMv72AmQzFXf2eEXJjjRlWL3vnNm_F4PJpgDNl4W4N1utd=w400"
+        "https://lh3.googleusercontent.com/pw/AP1GczO0fgif17Ugtkd7VukgNGQtLM0KgJToR6Qbo40tuWKTKgntw5jGHOFBWVq1S1MNtg6zW5hZvFHjEFxuh3mUR8zqmIVwkOLpcQFAooNSXljMv72AmQzFXf2eEXJjjRlWL3vnNm_F4PJpgDNl4W4N1utd=w800"
     ];
     const randomImg = loadingImages[Math.floor(Math.random() * loadingImages.length)];
 
