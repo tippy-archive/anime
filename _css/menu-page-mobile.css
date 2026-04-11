@@ -66,6 +66,14 @@
         contain-intrinsic-size: auto 500px;
     }
 
+.main-list.is-collapsed .list-item {
+        display: none !important;
+    }
+
+    .main-list.is-collapsed .list-item.is-visible {
+        display: block !important;
+    }
+
     .list-select {
         width: calc(98vw / 3);
     }
@@ -107,7 +115,7 @@
     }
 
     #search-results {
-        min-height: calc(100vh - ((100vw * 0.5625) + 1vw + 168px));
+        min-height: calc(100vh - ((100vw * 0.5625) + 1vw + 166px));
     }
 
     .search-item-animated {
