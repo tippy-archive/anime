@@ -62,10 +62,6 @@
         margin: 1vw 0;
     }
 
-    .main-list {
-        contain-intrinsic-size: auto 500px;
-    }
-
 .main-list.is-collapsed .list-item {
         display: none !important;
     }
