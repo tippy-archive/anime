@@ -55,8 +55,8 @@
             background: #fff; z-index: 9999; display: flex; flex-direction: column;
             align-items: center; justify-content: center; transition: opacity 0.5s ease;
         ">
-            <img id="mobile-loader-img" src="${randomImg}" style="width: 90%; max-width: 400px; border-radius: 15px; margin-bottom: 20px;">
-            <div class="loader-dots" style="font-size: 14px; color: #CBA2FF; font-weight: bold;">Loading...</div>
+            <img id="mobile-loader-img" src="${randomImg}" style="width: 90%; max-width: 400px; border-radius: 8px; margin-bottom: 20px;">
+            <div class="loader-dots" style="font-size: 16px; color: #CBA2FF; font-weight: bold;">Loading...</div>
         </div>
     `);
 
