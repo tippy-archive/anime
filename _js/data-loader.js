@@ -1,33 +1,32 @@
 (function() {
     const listContainers = document.querySelectorAll('.main-list[data-json]');
+
     window.globalData = window.globalData || [];
 
     window.dataLoader = (async function() {
-        const fetchPromises = Array.from(listContainers).map(async (container) => {
-            const jsonUrl = container.getAttribute('data-json');
-            try {
-                const response = await fetch(jsonUrl);
-                const data = await response.json();
-                window.globalData.push(...data);
+for (const container of listContainers) {
+    const jsonUrl = container.getAttribute('data-json');
+    try {
+        const response = await fetch(jsonUrl);
+        const data = await response.json();
+        window.globalData.push(...data);
 
-                container.innerHTML = data
-                    .filter(item => !item.i.includes('data:image/svg+xml'))
-                    .map(item => `
-                        <a href="${item.u}" class="list-item">
-                            <ul class="list-select playlist-main">
-                                <li class="list-img"><img src="${item.i}" loading="lazy" alt="${item.t}"/></li>
-                                <li class="list-title"><p>${item.t}</p></li>
-                            </ul>
-                        </a>
-                    `).join('');
+        container.innerHTML = data
+            .filter(item => !item.i.includes('data:image/svg+xml'))
+            .map(item => `
+                <a href="${item.u}" class="list-item">
+                    <ul class="list-select playlist-main">
+                        <li class="list-img"><img src="${item.i}" loading="lazy" alt="${item.t}"/></li>
+                        <li class="list-title"><p>${item.t}</p></li>
+                    </ul>
+                </a>
+            `).join('');
 
-                initMobileCollapse(container);
-
-            } catch (error) {
-                console.error(`${jsonUrl} 로드 실패:`, error);
-            }
-        });
-        await Promise.all(fetchPromises);
+        initMobileCollapse(container);
+    } catch (error) {
+        console.error(`${jsonUrl} 로드 실패:`, error);
+    }
+}
     })();
 
 function initMobileCollapse(container) {

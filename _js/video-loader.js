@@ -51,3 +51,32 @@ function setupPlaylistClickHandler() {
         }
     });
 }
+
+function setupPlaylistClickHandler() {
+    const container = document.querySelector('.main-playlist');
+    let selectedItem = null;
+
+    container.addEventListener('click', function (e) {
+        const clickedSpan = e.target.closest('span');
+
+        if (clickedSpan) {
+            const clickedItem = clickedSpan.querySelector('.playlist-main');
+
+            if (selectedItem === clickedItem) {
+                selectedItem.classList.remove('selected');
+                selectedItem = null;
+
+                if (typeof startFading === 'function') startFading();
+            } 
+            else {
+                if (selectedItem && selectedItem !== clickedItem) {
+                    selectedItem.classList.remove('selected');
+                }
+                clickedItem.classList.add('selected');
+                selectedItem = clickedItem;
+
+                if (typeof stopFading === 'function') stopFading();
+            }
+        }
+    });
+}
