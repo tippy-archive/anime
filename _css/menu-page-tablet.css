@@ -65,7 +65,11 @@
         margin: 10px 0;
     }
 
-.main-list.is-collapsed .list-item {
+    #recent-container {
+        display: none !important;
+    }
+
+    .main-list.is-collapsed .list-item {
         display: block !important;
     }
 
