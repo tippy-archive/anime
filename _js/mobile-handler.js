@@ -18,9 +18,9 @@
     loaderImage.style.cssText = `
         width: 80vw;
         border-radius: 12px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         object-fit: cover;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     `;
 
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
