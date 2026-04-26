@@ -1,6 +1,6 @@
 (function() {
     const imageUrls = [
-        'https://lh3.googleusercontent.com/pw/AP1GczO0fgif17Ugtkd7VukgNGQtLM0KgJToR6Qbo40tuWKTKgntw5jGHOFBWVq1S1MNtg6zW5hZvFHjEFxuh3mUR8zqmIVwkOLpcQFAooNSXljMv72AmQzFXf2eEXJjjRlWL3vnNm_F4PJpgDNl4W4N1utd'
+        'https://lh3.googleusercontent.com/pw/AP1GczO0fgif17Ugtkd7VukgNGQtLM0KgJToR6Qbo40tuWKTKgntw5jGHOFBWVq1S1MNtg6zW5hZvFHjEFxuh3mUR8zqmIVwkOLpcQFAooNSXljMv72AmQzFXf2eEXJjjRlWL3vnNm_F4PJpgDNl4W4N1utd=w800'
     ];
 
     if (window.innerWidth > 480) return;
@@ -16,11 +16,11 @@
     const loaderImage = document.createElement('img');
     loaderImage.id = 'loader-image';
     loaderImage.style.cssText = `
-        width: 70vw;
+        width: 80vw;
         border-radius: 12px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         object-fit: cover;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     `;
 
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
