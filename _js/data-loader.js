@@ -73,22 +73,10 @@ const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브", "5": "
     }
 })();
 
-function loadRecentItems() {
+ffunction loadRecentItems() {
     const recentList = document.getElementById('recent-list');
     const recentContainer = document.getElementById('recent-container');
-    let recent = JSON.parse(localStorage.getItem('tippy_recent_items')) || [];
-
-    const requiredKeys = ['u', 't', 'i', 'c', 'd'];
-	
-    const isOldVersion = recent.length > 0 && recent.some(item => 
-        requiredKeys.some(key => !item.hasOwnProperty(key))
-    );
-
-    if (isOldVersion) {
-        console.warn("구버전 데이터를 감지하여 초기화합니다.");
-        localStorage.removeItem('tippy_recent_items');
-        recent = [];
-    }
+    const recent = JSON.parse(localStorage.getItem('tippy_recent_items')) || [];
 
     if (recent.length === 0) {
         recentContainer.style.display = 'none';
@@ -97,14 +85,17 @@ function loadRecentItems() {
 
     recentContainer.style.display = 'block';
 
-    recentList.innerHTML = recent.map(item => `
+    recentList.innerHTML = recent.map(item => {
+        const hasBadge = (item.c && subMap[item.c]) || (item.d && typeMap[item.d]);
+        
+        return `
         <a href="${item.u}" class="list-item is-visible" data-c="${item.c || ''}" data-d="${item.d || ''}">
             <ul class="list-select playlist-main">
                 <li class="list-img">
-                    ${(item.c || item.d) ? `
+                    ${hasBadge ? `
                     <div class="badge-container">
-                        ${item.d ? `<div class="badge-type">${typeMap[item.d]}</div>` : ''}
-                        ${item.c ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
+                        ${(item.d && typeMap[item.d]) ? `<div class="badge-type">${typeMap[item.d]}</div>` : ''}
+                        ${(item.c && subMap[item.c]) ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
                     </div>
                     ` : ''}
                     <img src="${item.i}" loading="lazy" alt="${item.t}"/>
@@ -112,7 +103,7 @@ function loadRecentItems() {
                 <li class="list-title"><p>${item.t}</p></li>
             </ul>
         </a>
-    `).join('');
+    `}).join('');
 }
 
 document.addEventListener('click', function (e) {
