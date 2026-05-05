@@ -1,4 +1,4 @@
-(function() {
+(function () {
     const imageUrls = [
         'https://lh3.googleusercontent.com/pw/AP1GczO0fgif17Ugtkd7VukgNGQtLM0KgJToR6Qbo40tuWKTKgntw5jGHOFBWVq1S1MNtg6zW5hZvFHjEFxuh3mUR8zqmIVwkOLpcQFAooNSXljMv72AmQzFXf2eEXJjjRlWL3vnNm_F4PJpgDNl4W4N1utd=w800'
     ];
@@ -30,7 +30,7 @@
     loaderText.id = 'loader-text';
     loaderText.style.cssText = `font-size: 24px; color: #CBA2FF; font-weight: bold;`;
     loaderText.innerText = 'Loading';
-    
+
     loader.appendChild(loaderImage);
     loader.appendChild(loaderText);
 
@@ -39,7 +39,7 @@
     });
 
     let dotCount = 0;
-    const dotInterval = setInterval(function() {
+    const dotInterval = setInterval(function () {
         const textElement = document.getElementById('loader-text');
         if (textElement) {
             dotCount = (dotCount + 1) % 4;
@@ -47,7 +47,7 @@
         }
     }, 300);
 
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         const loader = document.getElementById('mobile-loader');
         if (!loader) return;
 

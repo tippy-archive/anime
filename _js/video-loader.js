@@ -67,8 +67,7 @@ function setupPlaylistClickHandler() {
                 selectedItem = null;
 
                 if (typeof startFading === 'function') startFading();
-            } 
-            else {
+            } else {
                 if (selectedItem && selectedItem !== clickedItem) {
                     selectedItem.classList.remove('selected');
                 }

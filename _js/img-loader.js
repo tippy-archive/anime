@@ -50,10 +50,10 @@ function rotateimage() {
     curindex = (curindex === tempindex) ? (curindex + 1) % randomimages.length : tempindex;
 
     preloadImage.src = randomimages[curindex];
-    
-    preloadImage.onload = function() {
-        if (!isFading) return; 
-        
+
+    preloadImage.onload = function () {
+        if (!isFading) return;
+
         newImageElement.src = preloadImage.src;
         oldImageElement.classList.remove('active');
         newImageElement.classList.add('active');
@@ -61,7 +61,7 @@ function rotateimage() {
         currentActiveImageId = newImageId;
     };
 
-    preloadImage.onerror = function() {
+    preloadImage.onerror = function () {
         console.error("Failed to load image: " + randomimages[curindex]);
     };
 }
