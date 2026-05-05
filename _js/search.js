@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const autocompleteList = document.getElementById('autocomplete-list');
     const mainContent = document.getElementById('main-content');
     const searchResults = document.getElementById('search-results');
+    const subMap = {"1": "한국어", "2": "일본어", "3": "공통", "4": "없음", "5": "제작중"};
+    const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브", "5": "제작중"};
 
     let debounceTimer;
     const AUTOCOMPLETE_LIMIT = 5;
@@ -130,31 +132,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function renderWithAnimation(data) {
-        searchResults.innerHTML = '';
+function renderWithAnimation(data) {
+    searchResults.innerHTML = '';
 
-        if (data.length === 0) {
-            const noResultMsg = document.createElement('p');
-            noResultMsg.className = 'no-result';
-            noResultMsg.textContent = '검색 결과가 없습니다.';
-            searchResults.appendChild(noResultMsg);
-            return;
-        }
-
-        data.forEach((item, index) => {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'search-item-animated';
-
-            wrapper.innerHTML = `
-            <a href="${item.u}" class="list-item">
-                <ul class="list-select playlist-main">
-                    <li class="list-img"><img src="${item.i}"/></li>
-                    <li class="list-title"><p>${item.t}</p></li>
-                </ul>
-            </a>`;
-            searchResults.appendChild(wrapper);
-        });
+    if (data.length === 0) {
+        const noResultMsg = document.createElement('p');
+        noResultMsg.className = 'no-result';
+        noResultMsg.textContent = '검색 결과가 없습니다.';
+        searchResults.appendChild(noResultMsg);
+        return;
     }
+
+    data.forEach((item, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'search-item-animated';
+
+        wrapper.innerHTML = `
+        <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}">
+            <ul class="list-select playlist-main">
+                <li class="list-img">
+                    ${(item.c || item.d) ? `
+                    <div class="badge-container">
+                        ${item.d ? `<div class="badge-type">${typeMap[item.d]}</div>` : ''}
+                        ${item.c ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
+                    </div>
+                    ` : ''}
+                    <img src="${item.i}"/>
+                </li>
+                <li class="list-title"><p>${item.t}</p></li>
+            </ul>
+        </a>`;
+        searchResults.appendChild(wrapper);
+    });
+}
 
     function resetSearch() {
         if (mainContent) mainContent.style.display = 'block';

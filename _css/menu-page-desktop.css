@@ -102,6 +102,15 @@
         padding: 4px 4px 0 4px;
     }
 
+.badge-container {
+    top: 4px;
+    left: 4px;
+}
+.badge-type, .badge-sub {
+    font-size: 15px;
+    padding: 4px 8px;
+}
+
     .list-title {
         height: 120px;
         padding: 0 4px 4px 4px;

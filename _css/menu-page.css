@@ -78,6 +78,10 @@
     border-radius: 8px;
 }
 
+.list-img {
+    position: relative;
+}
+
 .list-img img {
     align-content: center;
     object-fit: cover;
@@ -92,6 +96,34 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.badge-container {
+    position: absolute;
+    display: flex;
+    gap: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.badge-type {
+    background-color: #CBA2FF;
+    color: #ffffff;
+    border-radius: 8px 0 0 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-sub {
+    background-color: #6EC0FF;
+    color: #ffffff;
+    border-radius: 0 0 8px 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {

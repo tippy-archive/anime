@@ -80,6 +80,15 @@
         padding: 2px 2px 0 2px;
     }
 
+.badge-container {
+    top: 2px;
+    left: 2px;
+}
+.badge-type, .badge-sub {
+    font-size: 10px;
+    padding: 2px 4px;
+}
+
     .list-title {
         height: 50px;
         padding: 0 2px 2px 2px;
