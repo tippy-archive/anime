@@ -1,17 +1,5 @@
-const subMap = {
-    "1": "한국어",
-    "2": "일본어",
-    "3": "공통",
-    "4": "없음",
-    "5": "제작중"
-};
-const typeMap = {
-    "1": "TVA",
-    "2": "영화",
-    "3": "OVA",
-    "4": "라이브",
-    "5": "제작중"
-};
+const subMap = {"1": "한국어", "2": "일본어", "3": "공통", "4": "없음", "5": "제작중"};
+const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브", "5": "제작중"};
 
 (function () {
     const listContainers = document.querySelectorAll('.main-list[data-json]');
@@ -88,7 +76,19 @@ const typeMap = {
 function loadRecentItems() {
     const recentList = document.getElementById('recent-list');
     const recentContainer = document.getElementById('recent-container');
-    const recent = JSON.parse(localStorage.getItem('tippy_recent_items')) || [];
+    let recent = JSON.parse(localStorage.getItem('tippy_recent_items')) || [];
+
+    const requiredKeys = ['u', 't', 'i', 'c', 'd'];
+	
+    const isOldVersion = recent.length > 0 && recent.some(item => 
+        requiredKeys.some(key => !item.hasOwnProperty(key))
+    );
+
+    if (isOldVersion) {
+        console.warn("구버전 데이터를 감지하여 초기화합니다.");
+        localStorage.removeItem('tippy_recent_items');
+        recent = [];
+    }
 
     if (recent.length === 0) {
         recentContainer.style.display = 'none';
