@@ -3,7 +3,6 @@ const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브", "5": "
 
 (function () {
     const listContainers = document.querySelectorAll('.main-list[data-json]');
-
     window.globalData = window.globalData || [];
 
     window.dataLoader = (async function () {
@@ -16,22 +15,25 @@ const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브", "5": "
 
                 container.innerHTML = data
                     .filter(item => !item.i.includes('data:image/svg+xml'))
-                    .map(item => `
-                    <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}">
-                        <ul class="list-select playlist-main">
-                            <li class="list-img">
-                                ${(item.c || item.d) ? `
-                                <div class="badge-container">
-                                    ${item.d ? `<div class="badge-type">${typeMap[item.d]}</div>` : ''}
-                                    ${item.c ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
-                                </div>
-                                ` : ''}
-                                <img src="${item.i}" loading="lazy" alt="${item.t}"/>
-                            </li>
-                            <li class="list-title"><p>${item.t}</p></li>
-                        </ul>
-                    </a>
-                `).join('');
+                    .map(item => {
+                        const hasBadge = (item.c && subMap[item.c]) || (item.d && typeMap[item.d]);
+                        
+                        return `
+                        <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}">
+                            <ul class="list-select playlist-main">
+                                <li class="list-img">
+                                    ${hasBadge ? `
+                                    <div class="badge-container">
+                                        ${(item.d && typeMap[item.d]) ? `<div class="badge-type">${typeMap[item.d]}</div>` : ''}
+                                        ${(item.c && subMap[item.c]) ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
+                                    </div>
+                                    ` : ''}
+                                    <img src="${item.i}" loading="lazy" alt="${item.t}"/>
+                                </li>
+                                <li class="list-title"><p>${item.t}</p></li>
+                            </ul>
+                        </a>
+                    `}).join('');
 
                 initMobileCollapse(container);
             } catch (error) {
@@ -52,11 +54,8 @@ const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브", "5": "
             header.style.cursor = 'pointer';
             header.onclick = function (e) {
                 if (window.innerWidth > 480) return;
-
                 e.preventDefault();
-
                 const isCollapsed = container.classList.toggle('is-collapsed');
-
                 if (isCollapsed) {
                     updateMobileRandomItems(items);
                 } else {
@@ -73,7 +72,7 @@ const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브", "5": "
     }
 })();
 
-ffunction loadRecentItems() {
+function loadRecentItems() {
     const recentList = document.getElementById('recent-list');
     const recentContainer = document.getElementById('recent-container');
     const recent = JSON.parse(localStorage.getItem('tippy_recent_items')) || [];
@@ -108,7 +107,6 @@ ffunction loadRecentItems() {
 
 document.addEventListener('click', function (e) {
     const link = e.target.closest('a.list-item');
-
     if (link) {
         const itemData = {
             u: link.getAttribute('href'),
@@ -117,13 +115,13 @@ document.addEventListener('click', function (e) {
             c: link.getAttribute('data-c'),
             d: link.getAttribute('data-d')
         };
-
         let recent = JSON.parse(localStorage.getItem('tippy_recent_items')) || [];
         recent = recent.filter(item => item.u !== itemData.u);
         recent.unshift(itemData);
         if (recent.length > 3) recent.pop();
-
         localStorage.setItem('tippy_recent_items', JSON.stringify(recent));
         loadRecentItems();
     }
 });
+
+window.addEventListener('DOMContentLoaded', loadRecentItems);
