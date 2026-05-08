@@ -88,10 +88,16 @@
         left: 4px;
     }
 
-    .badge-type,
+    .badge-type {
+        font-size: 14px;
+        padding: 3px 6px;
+        border-radius: 4px 0 0 0;
+    }
+
     .badge-sub {
         font-size: 14px;
         padding: 3px 6px;
+        border-radius: 0 0 4px 0;
     }
 
     .list-title {
