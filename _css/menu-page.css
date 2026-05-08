@@ -109,7 +109,7 @@
 .badge-type {
     background-color: #CBA2FF;
     color: #ffffff;
-    border-radius: 5px 0 0 0;
+    border-radius: 4px 0 0 0;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -119,7 +119,7 @@
 .badge-sub {
     background-color: #6EC0FF;
     color: #ffffff;
-    border-radius: 0 0 5px 0;
+    border-radius: 0 0 4px 0;
     font-weight: 700;
     display: flex;
     align-items: center;

@@ -20,7 +20,7 @@
         border-radius: 12px;
         margin-bottom: 20px;
         object-fit: cover;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.8);
     `;
 
     const randomIndex = Math.floor(Math.random() * imageUrls.length);

@@ -14,16 +14,22 @@ async function loadContentByFilename() {
         }
 
         const container = document.querySelector('.main-playlist');
-        container.innerHTML = listData.map(item => `
-            <span data-title="${item.t}" 
-                  data-subtitle="${item.s}" 
-                  data-iframe-url="${item.v}">
-                <ul class="playlist-main">
-                    <li class="playlist-img"><img src="${item.i}"/></li>
-                    <li class="playlist-title">${item.l}</li>
-                </ul>
-            </span>
-        `).join('');
+        container.innerHTML = listData.map(item => {
+
+            const videoFullUrl = `https://drive.google.com/file/d/${item.v}/preview`;
+            const imageFullUrl = `https://lh3.googleusercontent.com/pw/${item.i}`;
+
+            return `
+                <span data-title="${item.t}" 
+                      data-subtitle="${item.s}" 
+                      data-iframe-url="${videoFullUrl}">
+                    <ul class="playlist-main">
+                        <li class="playlist-img"><img src="${imageFullUrl}"/></li>
+                        <li class="playlist-title">${item.l}</li>
+                   </ul>
+                </span>
+            `;
+        }).join('');
 
     } catch (error) {
         console.error("로딩 실패:", error);

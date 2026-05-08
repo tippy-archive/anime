@@ -26,7 +26,9 @@ async function loadImagesFromJSON() {
 
         randomimages = results.flatMap(data =>
             Object.values(data).flatMap(categoryArray =>
-                categoryArray.map(item => item.i).filter(url => url)
+                categoryArray.map(item => 
+                    item.i ? `https://lh3.googleusercontent.com/pw/${item.i}` : null
+                ).filter(url => url)
             )
         );
 
