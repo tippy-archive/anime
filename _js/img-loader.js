@@ -24,7 +24,7 @@ async function initBackgroundImages() {
         const imgSuffix = window.innerWidth < 480 ? '=w640' : '=w1920';
 
         const uniqueImages = new Set(listData.map(item => 
-            `https://lh3.googleusercontent.com/pw/${item.i}${imgSuffix}`
+            `https://lh3.googleusercontent.com/pw/AP1Gcz${item.i}${imgSuffix}`
         ));
         randomimages = Array.from(uniqueImages);
 

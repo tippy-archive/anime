@@ -9,8 +9,7 @@ var randomimages = [];
 
 const jsonFiles = [
     '24/_data.json',
-    '25/_data.json',
-    '26/_data.json'
+    '25/_data.json'
 ];
 
 async function loadImagesFromJSON() {
@@ -24,15 +23,26 @@ async function loadImagesFromJSON() {
 
         const results = await Promise.all(fetchPromises);
 
+        const allowedCategories = []; 
+
         randomimages = results.flatMap(data =>
-            Object.values(data).flatMap(categoryArray =>
-                categoryArray.map(item => 
-                    item.i ? `https://lh3.googleusercontent.com/pw/${item.i}` : null
-                ).filter(url => url)
-            )
+            Object.entries(data).flatMap(([categoryName, categoryArray]) => {
+                
+                const isAllAllowed = allowedCategories.length === 0;
+                const isFilteredAllowed = allowedCategories.includes(categoryName);
+
+                if (!isAllAllowed && !isFilteredAllowed) {
+                    return [];
+                }
+
+                return categoryArray
+                    .map(item => item.i ? `https://lh3.googleusercontent.com/pw/AP1Gcz${item.i}` : null)
+                    .filter(url => url);
+            })
         );
 
-        console.log("전체 이미지 로드 완료:", randomimages.length, "개");
+        const logTarget = allowedCategories.length === 0 ? "전체" : allowedCategories.join(', ');
+        console.log(`${logTarget} 카테고리 이미지 로드 완료:`, randomimages.length, "개");
 
         checkWidthAndRun();
         window.addEventListener('resize', checkWidthAndRun);

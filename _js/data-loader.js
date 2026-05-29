@@ -1,6 +1,10 @@
 const subMap = {"1": "한국어", "2": "일본어", "3": "공통", "4": "제작중", "5": "없음"};
 const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브"};
 
+const IMAGE_BASE_URL = "https://lh3.googleusercontent.com/pw/AP1Gcz";
+
+const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${IMAGE_BASE_URL}${i}`;
+
 (function () {
     const listContainers = document.querySelectorAll('.main-list[data-json]');
     window.globalData = window.globalData || [];
@@ -19,7 +23,7 @@ const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브"};
                         const hasBadge = (item.c && subMap[item.c]) || (item.d && typeMap[item.d]);
                         
                         return `
-                        <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}">
+                        <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}" data-img="${item.i}">
                             <ul class="list-select playlist-main">
                                 <li class="list-img">
                                     ${hasBadge ? `
@@ -28,7 +32,7 @@ const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브"};
                                         ${(item.c && subMap[item.c]) ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
                                     </div>
                                     ` : ''}
-                                    <img src="${item.i}" loading="lazy" alt="${item.t}"/>
+                                    <img src="${getFullImageUrl(item.i)}" loading="lazy" alt="${item.t}"/>
                                 </li>
                                 <li class="list-title"><p>${item.t}</p></li>
                             </ul>
@@ -88,7 +92,7 @@ function loadRecentItems() {
         const hasBadge = (item.c && subMap[item.c]) || (item.d && typeMap[item.d]);
         
         return `
-        <a href="${item.u}" class="list-item is-visible" data-c="${item.c || ''}" data-d="${item.d || ''}">
+        <a href="${item.u}" class="list-item is-visible" data-c="${item.c || ''}" data-d="${item.d || ''}" data-img="${item.i}">
             <ul class="list-select playlist-main">
                 <li class="list-img">
                     ${hasBadge ? `
@@ -97,7 +101,7 @@ function loadRecentItems() {
                         ${(item.c && subMap[item.c]) ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
                     </div>
                     ` : ''}
-                    <img src="${item.i}" loading="lazy" alt="${item.t}"/>
+                    <img src="${getFullImageUrl(item.i)}" loading="lazy" alt="${item.t}"/>
                 </li>
                 <li class="list-title"><p>${item.t}</p></li>
             </ul>
@@ -110,7 +114,7 @@ document.addEventListener('click', function (e) {
     if (link) {
         const itemData = {
             u: link.getAttribute('href'),
-            i: link.querySelector('img').getAttribute('src'),
+            i: link.getAttribute('data-img'),
             t: link.querySelector('.list-title p').innerHTML,
             c: link.getAttribute('data-c'),
             d: link.getAttribute('data-d')

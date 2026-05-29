@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${item.c ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
                     </div>
                     ` : ''}
-                    <img src="${item.i}"/>
+                    <img src="${item.i.startsWith('data:image') ? item.i : `https://lh3.googleusercontent.com/pw/AP1Gcz${item.i}`}"/>
                 </li>
                 <li class="list-title"><p>${item.t}</p></li>
             </ul>
