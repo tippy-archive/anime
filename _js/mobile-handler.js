@@ -14,14 +14,15 @@
     `;
 
     const loaderImage = document.createElement('img');
-    loaderImage.id = 'loader-image';
-    loaderImage.style.cssText = `
-        width: 80vw;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        object-fit: cover;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.8);
-    `;
+        loaderImage.id = 'loader-image';
+        loaderImage.style.cssText = `
+            width: 80vw;
+            aspect-ratio: 2 / 3;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        `;
 
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
     loaderImage.src = imageUrls[randomIndex];
