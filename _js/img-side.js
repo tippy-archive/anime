@@ -8,6 +8,7 @@ var isRotationStoppedCompletely = false;
 var randomimages = [];
 
 const jsonFiles = [
+    '_data/_img.json',
     '24/_data.json',
     '25/_data.json'
 ];

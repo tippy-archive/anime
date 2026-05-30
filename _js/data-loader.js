@@ -1,9 +1,9 @@
 const subMap = {"1": "한국어", "2": "일본어", "3": "공통", "4": "제작중", "5": "없음"};
 const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브"};
 
-const IMAGE_BASE_URL = "https://lh3.googleusercontent.com/pw/AP1Gcz";
+const MENU_IMAGE_BASE_URL = "https://lh3.googleusercontent.com/pw/AP1Gcz";
 
-const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${IMAGE_BASE_URL}${i}`;
+const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BASE_URL}${i}`;
 
 (function () {
     const listContainers = document.querySelectorAll('.main-list[data-json]');
