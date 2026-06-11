@@ -29,7 +29,7 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
                         const hasBadge = (item.c && subMap[item.c]) || (item.d && typeMap[item.d]);
                         
                         return `
-                        <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}" data-img="${item.i}">
+                        <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}" data-i="${item.i}">
                             <ul class="list-select playlist-main">
                                 <li class="list-img">
                                     ${hasBadge ? `
@@ -101,7 +101,7 @@ function loadRecentItems() {
         const hasBadge = (item.c && subMap[item.c]) || (item.d && typeMap[item.d]);
         
         return `
-        <a href="${item.u}" class="list-item is-visible" data-c="${item.c || ''}" data-d="${item.d || ''}" data-img="${item.i}">
+        <a href="${item.u}" class="list-item is-visible" data-c="${item.c || ''}" data-d="${item.d || ''}" data-i="${item.i}">
             <ul class="list-select playlist-main">
                 <li class="list-img">
                     ${hasBadge ? `
@@ -123,7 +123,7 @@ document.addEventListener('click', function (e) {
     if (link) {
         const itemData = {
             u: link.getAttribute('href'),
-            i: link.getAttribute('data-img'),
+            i: link.getAttribute('data-i'),
             t: link.querySelector('.list-title p').innerHTML,
             c: link.getAttribute('data-c'),
             d: link.getAttribute('data-d')
