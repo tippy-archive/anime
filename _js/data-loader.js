@@ -6,6 +6,12 @@ const MENU_IMAGE_BASE_URL = "https://lh3.googleusercontent.com/pw/AP1Gcz";
 const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BASE_URL}${i}`;
 
 (function () {
+    const CLEAN_VERSION = "v1.0"; 
+    if (localStorage.getItem('tippy_recent_items_version') !== CLEAN_VERSION) {
+        localStorage.removeItem('tippy_recent_items'); 
+        localStorage.setItem('tippy_recent_items_version', CLEAN_VERSION);
+    }
+
     const listContainers = document.querySelectorAll('.main-list[data-json]');
     window.globalData = window.globalData || [];
 
@@ -39,7 +45,7 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
                         </a>
                     `}).join('');
 
-                initMobileCollapse(container);
+                setTimeout(() => initMobileCollapse(container), 0);
             } catch (error) {
                 console.error(`${jsonUrl} 로드 실패:`, error);
             }
@@ -56,8 +62,9 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
         const header = container.previousElementSibling;
         if (header && header.classList.contains('main-middle')) {
             header.style.cursor = 'pointer';
+            
             header.onclick = function (e) {
-                if (window.innerWidth > 480) return;
+                if (window.innerWidth > 480) return; 
                 e.preventDefault();
                 const isCollapsed = container.classList.toggle('is-collapsed');
                 if (isCollapsed) {
@@ -79,6 +86,8 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
 function loadRecentItems() {
     const recentList = document.getElementById('recent-list');
     const recentContainer = document.getElementById('recent-container');
+    if (!recentList || !recentContainer) return;
+
     const recent = JSON.parse(localStorage.getItem('tippy_recent_items')) || [];
 
     if (recent.length === 0) {
@@ -124,19 +133,9 @@ document.addEventListener('click', function (e) {
         recent.unshift(itemData);
         if (recent.length > 3) recent.pop();
         localStorage.setItem('tippy_recent_items', JSON.stringify(recent));
+
         loadRecentItems();
     }
 });
-
-(function() {
-    const CLEAN_VERSION = "v1.0"; 
-    const currentVersion = localStorage.getItem('tippy_recent_items_version');
-
-    if (currentVersion !== CLEAN_VERSION) {
-        localStorage.removeItem('tippy_recent_items'); 
-
-        localStorage.setItem('tippy_recent_items_version', CLEAN_VERSION);
-    }
-})();
 
 window.addEventListener('DOMContentLoaded', loadRecentItems);
