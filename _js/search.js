@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function renderWithAnimation(data) {
+function renderWithAnimation(data) {
         searchResults.innerHTML = '';
 
         if (data.length === 0) {
@@ -147,8 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const wrapper = document.createElement('div');
             wrapper.className = 'search-item-animated';
 
+            const imgUrl = item.i.startsWith('data:image') 
+                ? item.i 
+                : `https://lh3.googleusercontent.com/pw/AP1Gcz${item.i}`;
+
             wrapper.innerHTML = `
-        <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}">
+        <a href="${item.u}" class="list-item" data-c="${item.c || ''}" data-d="${item.d || ''}" data-i="${item.i || ''}">
             <ul class="list-select playlist-main">
                 <li class="list-img">
                     ${(item.c || item.d) ? `
@@ -157,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${item.c ? `<div class="badge-sub">${subMap[item.c]}</div>` : ''}
                     </div>
                     ` : ''}
-                    <img src="${item.i.startsWith('data:image') ? item.i : `https://lh3.googleusercontent.com/pw/AP1Gcz${item.i}`}"/>
+                    <img src="${imgUrl}" loading="lazy" alt="${item.t}"/>
                 </li>
                 <li class="list-title"><p>${item.t}</p></li>
             </ul>
