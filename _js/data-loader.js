@@ -128,4 +128,15 @@ document.addEventListener('click', function (e) {
     }
 });
 
+(function() {
+    const CLEAN_VERSION = "v1.0"; 
+    const currentVersion = localStorage.getItem('tippy_recent_items_version');
+
+    if (currentVersion !== CLEAN_VERSION) {
+        localStorage.removeItem('tippy_recent_items'); 
+
+        localStorage.setItem('tippy_recent_items_version', CLEAN_VERSION);
+    }
+})();
+
 window.addEventListener('DOMContentLoaded', loadRecentItems);
