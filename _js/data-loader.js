@@ -1,4 +1,4 @@
-const subMap = {"1": "한국어", "2": "일본어", "3": "공통", "4": "제작중", "5": "없음"};
+const subMap = {"1": "한국어", "2": "일본어", "3": "통합", "4": "제작중", "5": "없음"};
 const typeMap = {"1": "TVA", "2": "영화", "3": "OVA", "4": "라이브"};
 
 const MENU_IMAGE_BASE_URL = "https://lh3.googleusercontent.com/pw/AP1Gcz";
