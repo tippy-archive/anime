@@ -1,6 +1,5 @@
 const headerJsonFiles = [
     '_data/_img.json',
-    '24/_data.json',
     '25/_data.json'
 ];
 
