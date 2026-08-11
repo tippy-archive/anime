@@ -79,26 +79,3 @@ window.addEventListener('load', () => {
         activeSpan = span;
     });
 });
-
-function updateIframeScale() {
-  const iframe = document.getElementById('google-iframe');
-  if (!iframe) return;
-
-  const wrapper = iframe.parentElement; 
-  if (!wrapper) return;
-
-  const mobileMaxWidth = 480;
-  const targetWidth = 880;
-
-  if (window.innerWidth <= mobileMaxWidth) {
-    const currentWidth = wrapper.clientWidth;
-    const scale = currentWidth / targetWidth;
-    
-    iframe.style.transform = `scale(${scale})`;
-  } else {
-    iframe.style.transform = 'none';
-  }
-}
-
-window.addEventListener('resize', updateIframeScale);
-window.addEventListener('DOMContentLoaded', updateIframeScale);

@@ -1,3 +1,26 @@
+function updateIframeScale() {
+  const wrapper = document.querySelector('.video-main');
+  if (!wrapper) return;
+  
+  const iframe = wrapper.querySelector('iframe');
+  if (!iframe) return;
+
+  const mobileMaxWidth = 480;
+  const targetWidth = 880;
+
+  if (window.innerWidth <= mobileMaxWidth) {
+    const currentWidth = wrapper.clientWidth;
+    const scale = currentWidth / targetWidth;
+    
+    iframe.style.transform = `scale(${scale})`;
+  } else {
+    iframe.style.transform = 'none';
+  }
+}
+
+window.addEventListener('resize', updateIframeScale);
+window.addEventListener('DOMContentLoaded', updateIframeScale);
+
 async function loadContentByFilename() {
     try {
         const fullPath = window.location.pathname;
