@@ -1,6 +1,3 @@
-window.addEventListener('resize', updateIframeScale);
-window.addEventListener('DOMContentLoaded', updateIframeScale);
-
 async function loadContentByFilename() {
     try {
         const fullPath = window.location.pathname;
