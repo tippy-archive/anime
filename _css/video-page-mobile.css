@@ -57,6 +57,8 @@
     .video-main {
         width: 98vw;
         height: 55.125vw;
+        overflow: hidden;
+        position: relative;
     }
 
     .video-main iframe {
