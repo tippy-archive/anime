@@ -54,11 +54,19 @@
         grid-row: 1 / 2;
     }
 
-    .video-main iframe {
+    .video-main {
         width: 98vw;
         height: 55.125vw;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .video-main iframe {
+        width: 880px;
+        height: 495px;
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        transform-origin: 0 0;
     }
 
     #main-video-title {
