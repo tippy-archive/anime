@@ -80,14 +80,12 @@ window.addEventListener('load', () => {
     });
 });
 
-
-
 function updateIframeScale() {
-  const wrapper = document.querySelector('.video-main');
-  if (!wrapper) return;
-  
-  const iframe = wrapper.querySelector('iframe');
+  const iframe = document.getElementById('google-iframe');
   if (!iframe) return;
+
+  const wrapper = iframe.parentElement; 
+  if (!wrapper) return;
 
   const mobileMaxWidth = 480;
   const targetWidth = 880;
