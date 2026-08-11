@@ -90,7 +90,7 @@ function setupPlaylistClickHandler() {
 }
 
 function updateIframeScale() {
-  const wrapper = document.querySelector('.iframe-wrapper');
+  const wrapper = document.querySelector('.video-main');
   if (!wrapper) return;
   
   const iframe = wrapper.querySelector('iframe');
