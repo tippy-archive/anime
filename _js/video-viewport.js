@@ -48,15 +48,12 @@ window.addEventListener('load', () => {
             title,
             subtitle
         } = dataSource.dataset;
-        const imgContainer = document.querySelector('.image-container'); // ★ 이미지 컨테이너 선택
 
         if (activeSpan === span) {
             if (currentIframe) {
                 VideoMain.removeChild(currentIframe);
                 currentIframe = null;
             }
-
-            if (imgContainer) imgContainer.style.display = 'block';
 
             if (!window.rotationInterval && typeof window.rotateimage === 'function') {
                 window.rotationInterval = setInterval(window.rotateimage, window.delay || 6000);
@@ -75,8 +72,6 @@ window.addEventListener('load', () => {
             clearInterval(window.rotationInterval);
             window.rotationInterval = null;
         }
-
-        if (imgContainer) imgContainer.style.display = 'none';
 
         if (activeSpan) {
             activeSpan.classList.remove('selected');
@@ -97,9 +92,7 @@ window.addEventListener('load', () => {
             VideoMain.appendChild(newIframe);
             currentIframe = newIframe;
 
-            if (typeof updateIframeScale === 'function') {
-                updateIframeScale();
-            }
+            updateIframeScale();
         }
 
         MainVideoTitle.textContent = title || "";
