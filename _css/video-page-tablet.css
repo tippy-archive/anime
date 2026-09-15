@@ -136,7 +136,7 @@
 
     .navbar {
         height: 51px;
-        padding: 0 max(30px, calc((100vw - 1090px) / 2));
+        padding: 0 max(30px, calc((100vw - 1090px) * 0.5));
         margin: 10px 0;
     }
 
