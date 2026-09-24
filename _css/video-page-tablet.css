@@ -106,7 +106,7 @@
         height: 13.5vw;
         min-width: 192px;
         min-height: 108px;
-        padding: 2px 4px;
+        padding: 2px;
     }
 
     .playlist-title {
@@ -224,7 +224,7 @@
         height: 13.5vw;
         max-width: 288px;
         max-height: 162px;
-        padding: 2px 4px;
+        padding: 2px;
     }
 
     .playlist-title {
