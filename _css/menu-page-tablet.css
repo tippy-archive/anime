@@ -59,6 +59,21 @@
         padding: 0 10px 10px 10px;
     }
 
+    .year-filter-container {
+        padding: 15px 20px;
+    }
+
+    .year-filter-scroll {
+        max-width: 1000px;
+        gap: 8px;
+    }
+
+    .year-filter-btn {
+        padding: 8px 16px;
+        font-size: 14px; /* 태블릿/데스크톱 글자 크기 */
+        border-radius: 20px;
+    }
+
     .main-middle {
         font-size: 18px;
         padding: 10px;

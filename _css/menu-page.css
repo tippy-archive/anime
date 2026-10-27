@@ -1,3 +1,21 @@
+/* 1. html, body 기본 구조 설정 (높이 강제 고정 제거) */
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column; /* 전체 페이지를 세로 Flex로 설정 */
+    font-family: "Quicksand", "Noto Sans KR", "Noto Sans JP", sans-serif;
+    font-weight: bold;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .header {
     background-size: cover;
     background-attachment: scroll;
@@ -36,6 +54,17 @@
 
 .row {
     display: flex;
+    flex: 1; /* 남은 빈 공간을 채워 footer를 아래로 밀어냄 */
+}
+
+.row-main {
+    flex: 1;
+    min-width: 0; /* flex 자식 요소가 넘치는 것 방지 */
+}
+
+/* 실제 아이템들이 나열되는 main-content 영역 */
+#main-content {
+    flex: 1; /* 데이터가 없거나 적어도 footer를 아래로 밀어내도록 공간 확장 */
 }
 
 .image-container {
@@ -48,6 +77,63 @@
 .fade-img {
     width: 300px;
     height: calc(300px * 0.5625);
+}
+
+/* 연도별 좌우 스크롤 필터 바 컨테이너 */
+.year-filter-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+/* 검색창(max-width: 1000px)과 정확히 크기를 일치시킴 */
+.year-filter-scroll {
+    position: relative; /* 기준점 설정 */
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+}
+
+.year-filter-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.year-filter-scroll::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+}
+
+.year-filter-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 14px;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.year-filter-btn:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+}
+
+.year-filter-btn.active {
+    background: linear-gradient(60deg, #CBA2FF 0%, #6EC0FF 100%);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(203, 162, 255, 0.4);
 }
 
 .main-middle {
