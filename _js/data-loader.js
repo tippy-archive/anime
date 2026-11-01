@@ -33,24 +33,19 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
                 const response = await fetch(jsonUrl);
                 const data = await response.json();
                 
-                // SVG 제외 및 유효한 아이템 필터링
                 const validData = data.filter(item => !item.i.includes('data:image/svg+xml'));
                 
-                // 전역 데이터 및 연도별 스토어에 저장
                 window.globalData.push(...validData.map(item => ({ ...item, year: yearKey })));
                 window.yearlyDataStore[yearKey] = validData;
 
-                // HTML 렌더링
                 container.innerHTML = renderItemsHTML(validData);
 
-                // 모바일 아코디언(클릭 시 3개 <-> 전체) 기능 적용
                 setTimeout(() => initMobileCollapse(container), 0);
             } catch (error) {
                 console.error(`${jsonUrl} 로드 실패:`, error);
             }
         }
 
-        // 연도 필터 및 이벤트 초기화
         initYearFilter();
     })();
 
@@ -113,8 +108,7 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
         if (!mainContent) return;
 
         const isMobile = window.innerWidth <= 480;
-        
-        // 새로고침 시 연도에 머물지 않고 항상 '전체'로 시작하도록 해시 초기화
+
         if (performance && performance.getEntriesByType("navigation")[0]?.type === "reload") {
             history.replaceState(null, null, window.location.pathname);
         }
@@ -140,7 +134,6 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
             });
         }
 
-        // 상단 스크롤 바 버튼 클릭 이벤트
         filterButtons.forEach(btn => {
             btn.addEventListener('click', function () {
                 filterButtons.forEach(b => b.classList.remove('active'));
@@ -148,8 +141,7 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
                 const selectedYear = this.getAttribute('data-year');
                 
                 history.pushState(null, null, `#${selectedYear === 'all' ? '' : selectedYear}`);
-                
-                // 클릭한 버튼을 정확히 정중앙으로 이동
+
                 scrollToCenter(this);
 
                 if (selectedYear === 'all') {
@@ -161,7 +153,6 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
             });
         });
 
-        // 우측 사이드바 연도 링크 클릭 이벤트 연동
         const sideLinks = document.querySelectorAll('.row-side a[href^="#"]');
         sideLinks.forEach(link => {
             const href = link.getAttribute('href');
@@ -187,7 +178,6 @@ const getFullImageUrl = (i) => i.startsWith('data:image') ? i : `${MENU_IMAGE_BA
             }
         });
 
-        // 마우스 휠을 가로 스크롤로 변환
         const scrollContainer = document.getElementById('yearFilterScroll');
         if (scrollContainer) {
             scrollContainer.addEventListener('wheel', function (e) {
@@ -203,7 +193,6 @@ function scrollToCenter(btn) {
         const container = document.getElementById('yearFilterScroll');
         if (!container || !btn) return;
 
-        // [핵심] getBoundingClientRect를 사용하여 사이드바 유무나 부모 오프셋 오차 없이 정확한 상대 위치 계산
         const containerRect = container.getBoundingClientRect();
         const btnRect = btn.getBoundingClientRect();
         const currentScroll = container.scrollLeft;
